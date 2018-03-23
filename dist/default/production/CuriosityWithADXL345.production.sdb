@@ -1,0 +1,396 @@
+[p LITE_MODE AUTOSTATIC PIC14 PIC14E ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16F1619 ]
+[d frameptr 6 ]
+"67 C:\Users\rputra\MPLABXProjects\CuriosityWithADXL345\ADXL345.c
+[v _ADXL345_GetRegisterValue ADXL345_GetRegisterValue `(uc  1 e 1 0 ]
+"102
+[v _ADXL345_SetRegisterValue ADXL345_SetRegisterValue `(v  1 e 1 0 ]
+"135
+[v _ADXL345_Init ADXL345_Init `(uc  1 e 1 0 ]
+"190
+[v _ADXL345_GetXyz ADXL345_GetXyz `(v  1 e 1 0 ]
+"32 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awtoft.c
+[v ___awtoft __awtoft `(f  1 e 3 0 ]
+"62 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
+[v ___ftpack __ftpack `(f  1 e 3 0 ]
+"86 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftadd.c
+[v ___ftadd __ftadd `(f  1 e 3 0 ]
+"62 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftmul.c
+[v ___ftmul __ftmul `(f  1 e 3 0 ]
+"6 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lldiv.c
+[v ___lldiv __lldiv `(ul  1 e 4 0 ]
+"56 C:\Users\rputra\MPLABXProjects\CuriosityWithADXL345\Communication.c
+[v _I2C_Init I2C_Init `(uc  1 e 1 0 ]
+"98
+[v _I2C_Write I2C_Write `(uc  1 e 1 0 ]
+"149
+[v _I2C_Read I2C_Read `(uc  1 e 1 0 ]
+"218
+[v _SPI_Init SPI_Init `(uc  1 e 1 0 ]
+"236
+[v _SPI_Read SPI_Read `(uc  1 e 1 0 ]
+"252
+[v _SPI_Write SPI_Write `(uc  1 e 1 0 ]
+"51 C:\Users\rputra\MPLABXProjects\CuriosityWithADXL345\interrupt_manager.c
+[v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `II(v  1 e 1 0 ]
+"54 C:\Users\rputra\MPLABXProjects\CuriosityWithADXL345\main.c
+[v _main main `(v  1 e 1 0 ]
+"77 C:\Users\rputra\MPLABXProjects\CuriosityWithADXL345\mcc.c
+[v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
+"84
+[v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
+"52 C:\Users\rputra\MPLABXProjects\CuriosityWithADXL345\pin_manager.c
+[v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
+"63 C:\Users\rputra\MPLABXProjects\CuriosityWithADXL345\tmr0.c
+[v _TMR0_Initialize TMR0_Initialize `(v  1 e 1 0 ]
+"107
+[v _TMR0_ISR TMR0_ISR `(v  1 e 1 0 ]
+"129
+[v _TMR0_CallBack TMR0_CallBack `(v  1 e 1 0 ]
+"139
+[v _TMR0_SetInterruptHandler TMR0_SetInterruptHandler `(v  1 e 1 0 ]
+"143
+[v _TMR0_DefaultInterruptHandler TMR0_DefaultInterruptHandler `(v  1 e 1 0 ]
+"52 C:\Users\rputra\MPLABXProjects\CuriosityWithADXL345\ADXL345.c
+[v _communicationType communicationType `uc  1 e 1 0 ]
+"53
+[v _selectedRange selectedRange `uc  1 e 1 0 ]
+"54
+[v _fullResolutionSet fullResolutionSet `uc  1 e 1 0 ]
+[s S28 . 1 `uc 1 IOCIF 1 0 :1:0 
+`uc 1 INTF 1 0 :1:1 
+`uc 1 TMR0IF 1 0 :1:2 
+`uc 1 IOCIE 1 0 :1:3 
+`uc 1 INTE 1 0 :1:4 
+`uc 1 TMR0IE 1 0 :1:5 
+`uc 1 PEIE 1 0 :1:6 
+`uc 1 GIE 1 0 :1:7 
+]
+"372 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic16f1619.h
+[s S37 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 T0IF 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 T0IE 1 0 :1:5 
+]
+[u S42 . 1 `S28 1 . 1 0 `S37 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES42  1 e 1 @11 ]
+[s S233 . 1 `uc 1 TMR1IF 1 0 :1:0 
+`uc 1 TMR2IF 1 0 :1:1 
+`uc 1 CCP1IF 1 0 :1:2 
+`uc 1 SSP1IF 1 0 :1:3 
+`uc 1 TXIF 1 0 :1:4 
+`uc 1 RCIF 1 0 :1:5 
+`uc 1 ADIF 1 0 :1:6 
+`uc 1 TMR1GIF 1 0 :1:7 
+]
+"595
+[u S242 . 1 `S233 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES242  1 e 1 @16 ]
+[s S254 . 1 `uc 1 CCP2IF 1 0 :1:0 
+`uc 1 TMR4IF 1 0 :1:1 
+`uc 1 TMR6IF 1 0 :1:2 
+`uc 1 BCL1IF 1 0 :1:3 
+`uc 1 . 1 0 :1:4 
+`uc 1 C1IF 1 0 :1:5 
+`uc 1 C2IF 1 0 :1:6 
+`uc 1 OSFIF 1 0 :1:7 
+]
+"657
+[u S263 . 1 `S254 1 . 1 0 ]
+[v _PIR2bits PIR2bits `VES263  1 e 1 @17 ]
+"866
+[v _TMR0 TMR0 `VEuc  1 e 1 @21 ]
+"1612
+[v _TRISA TRISA `VEuc  1 e 1 @140 ]
+"1662
+[v _TRISB TRISB `VEuc  1 e 1 @141 ]
+"1701
+[v _TRISC TRISC `VEuc  1 e 1 @142 ]
+[s S275 . 1 `uc 1 TMR1IE 1 0 :1:0 
+`uc 1 TMR2IE 1 0 :1:1 
+`uc 1 CCP1IE 1 0 :1:2 
+`uc 1 SSP1IE 1 0 :1:3 
+`uc 1 TXIE 1 0 :1:4 
+`uc 1 RCIE 1 0 :1:5 
+`uc 1 ADIE 1 0 :1:6 
+`uc 1 TMR1GIE 1 0 :1:7 
+]
+"1780
+[u S284 . 1 `S275 1 . 1 0 ]
+[v _PIE1bits PIE1bits `VES284  1 e 1 @144 ]
+[s S296 . 1 `uc 1 CCP2IE 1 0 :1:0 
+`uc 1 TMR4IE 1 0 :1:1 
+`uc 1 TMR6IE 1 0 :1:2 
+`uc 1 BCL1IE 1 0 :1:3 
+`uc 1 . 1 0 :1:4 
+`uc 1 C1IE 1 0 :1:5 
+`uc 1 C2IE 1 0 :1:6 
+`uc 1 OSCFIE 1 0 :1:7 
+]
+"1842
+[u S305 . 1 `S296 1 . 1 0 ]
+[v _PIE2bits PIE2bits `VES305  1 e 1 @145 ]
+"2051
+[v _OPTION_REG OPTION_REG `VEuc  1 e 1 @149 ]
+[s S172 . 1 `uc 1 PS 1 0 :3:0 
+`uc 1 PSA 1 0 :1:3 
+`uc 1 TMR0SE 1 0 :1:4 
+`uc 1 TMR0CS 1 0 :1:5 
+`uc 1 INTEDG 1 0 :1:6 
+`uc 1 nWPUEN 1 0 :1:7 
+]
+"2074
+[s S179 . 1 `uc 1 PS0 1 0 :1:0 
+`uc 1 PS1 1 0 :1:1 
+`uc 1 PS2 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 T0SE 1 0 :1:4 
+`uc 1 T0CS 1 0 :1:5 
+]
+[u S186 . 1 `S172 1 . 1 0 `S179 1 . 1 0 ]
+[v _OPTION_REGbits OPTION_REGbits `VES186  1 e 1 @149 ]
+"2196
+[v _OSCTUNE OSCTUNE `VEuc  1 e 1 @152 ]
+"2254
+[v _OSCCON OSCCON `VEuc  1 e 1 @153 ]
+"2623
+[v _LATA LATA `VEuc  1 e 1 @268 ]
+"2673
+[v _LATB LATB `VEuc  1 e 1 @269 ]
+"2712
+[v _LATC LATC `VEuc  1 e 1 @270 ]
+"3048
+[v _BORCON BORCON `VEuc  1 e 1 @278 ]
+"3323
+[v _ANSELA ANSELA `VEuc  1 e 1 @396 ]
+"3370
+[v _ANSELB ANSELB `VEuc  1 e 1 @397 ]
+"3409
+[v _ANSELC ANSELC `VEuc  1 e 1 @398 ]
+"4517
+[v _WPUA WPUA `VEuc  1 e 1 @524 ]
+"4575
+[v _WPUB WPUB `VEuc  1 e 1 @525 ]
+"4614
+[v _WPUC WPUC `VEuc  1 e 1 @526 ]
+"4684
+[v _SSP1BUF SSP1BUF `VEuc  1 e 1 @529 ]
+"4689
+[v _SSPBUF SSPBUF `VEuc  1 e 1 @529 ]
+"4938
+[v _SSP1ADD SSP1ADD `VEuc  1 e 1 @530 ]
+"5446
+[v _SSP1STAT SSP1STAT `VEuc  1 e 1 @532 ]
+[s S339 . 1 `uc 1 BF 1 0 :1:0 
+`uc 1 UA 1 0 :1:1 
+`uc 1 R_nW 1 0 :1:2 
+`uc 1 S 1 0 :1:3 
+`uc 1 P 1 0 :1:4 
+`uc 1 D_nA 1 0 :1:5 
+`uc 1 CKE 1 0 :1:6 
+`uc 1 SMP 1 0 :1:7 
+]
+"5468
+[u S348 . 1 `S339 1 . 1 0 ]
+[v _SSP1STATbits SSP1STATbits `VES348  1 e 1 @532 ]
+"5568
+[v _SSP1CON1 SSP1CON1 `VEuc  1 e 1 @533 ]
+[s S317 . 1 `uc 1 SEN 1 0 :1:0 
+`uc 1 RSEN 1 0 :1:1 
+`uc 1 PEN 1 0 :1:2 
+`uc 1 RCEN 1 0 :1:3 
+`uc 1 ACKEN 1 0 :1:4 
+`uc 1 ACKDT 1 0 :1:5 
+`uc 1 ACKSTAT 1 0 :1:6 
+`uc 1 GCEN 1 0 :1:7 
+]
+"5860
+[u S326 . 1 `S317 1 . 1 0 ]
+[v _SSP1CON2bits SSP1CON2bits `VES326  1 e 1 @534 ]
+"5960
+[v _SSP1CON3 SSP1CON3 `VEuc  1 e 1 @535 ]
+"6082
+[v _ODCONA ODCONA `VEuc  1 e 1 @652 ]
+"6127
+[v _ODCONB ODCONB `VEuc  1 e 1 @653 ]
+"6166
+[v _ODCONC ODCONC `VEuc  1 e 1 @654 ]
+"21301
+[v _T0CKIPPS T0CKIPPS `VEuc  1 e 1 @3601 ]
+"52 C:\Users\rputra\MPLABXProjects\CuriosityWithADXL345\main.c
+[v _I2C_Status I2C_Status `uc  1 e 1 0 ]
+"57 C:\Users\rputra\MPLABXProjects\CuriosityWithADXL345\tmr0.c
+[v _timer0ReloadVal timer0ReloadVal `VEuc  1 e 1 0 ]
+"58
+[v _TMR0_InterruptHandler TMR0_InterruptHandler `*.37(v  1 e 2 0 ]
+"54 C:\Users\rputra\MPLABXProjects\CuriosityWithADXL345\main.c
+[v _main main `(v  1 e 1 0 ]
+{
+"81
+} 0
+"77 C:\Users\rputra\MPLABXProjects\CuriosityWithADXL345\mcc.c
+[v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
+{
+"82
+} 0
+"63 C:\Users\rputra\MPLABXProjects\CuriosityWithADXL345\tmr0.c
+[v _TMR0_Initialize TMR0_Initialize `(v  1 e 1 0 ]
+{
+"84
+} 0
+"139
+[v _TMR0_SetInterruptHandler TMR0_SetInterruptHandler `(v  1 e 1 0 ]
+{
+[v TMR0_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 1 ]
+"141
+} 0
+"52 C:\Users\rputra\MPLABXProjects\CuriosityWithADXL345\pin_manager.c
+[v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
+{
+"97
+} 0
+"84 C:\Users\rputra\MPLABXProjects\CuriosityWithADXL345\mcc.c
+[v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
+{
+"92
+} 0
+"135 C:\Users\rputra\MPLABXProjects\CuriosityWithADXL345\ADXL345.c
+[v _ADXL345_Init ADXL345_Init `(uc  1 e 1 0 ]
+{
+[v ADXL345_Init@commProtocol commProtocol `uc  1 a 1 wreg ]
+"137
+[v ADXL345_Init@status status `uc  1 a 1 22 ]
+"135
+[v ADXL345_Init@commProtocol commProtocol `uc  1 a 1 wreg ]
+"137
+[v ADXL345_Init@commProtocol commProtocol `uc  1 a 1 21 ]
+"159
+} 0
+"218 C:\Users\rputra\MPLABXProjects\CuriosityWithADXL345\Communication.c
+[v _SPI_Init SPI_Init `(uc  1 e 1 0 ]
+{
+"219
+[v SPI_Init@clockFreq clockFreq `ul  1 p 4 1 ]
+"220
+[v SPI_Init@clockPol clockPol `uc  1 p 1 5 ]
+"221
+[v SPI_Init@clockEdg clockEdg `uc  1 p 1 6 ]
+"224
+} 0
+"56
+[v _I2C_Init I2C_Init `(uc  1 e 1 0 ]
+{
+"59
+[v I2C_Init@pbFrequency pbFrequency `ul  1 a 4 13 ]
+"60
+[v I2C_Init@brgValue brgValue `us  1 a 2 17 ]
+"58
+[v I2C_Init@status status `uc  1 a 1 19 ]
+"56
+[v I2C_Init@clockFreq clockFreq `ul  1 p 4 5 ]
+"84
+} 0
+"6 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lldiv.c
+[v ___lldiv __lldiv `(ul  1 e 4 0 ]
+{
+"11
+[v ___lldiv@quotient quotient `ul  1 a 4 0 ]
+"12
+[v ___lldiv@counter counter `uc  1 a 1 4 ]
+"6
+[v ___lldiv@divisor divisor `ul  1 p 4 1 ]
+[v ___lldiv@dividend dividend `ul  1 p 4 5 ]
+"31
+} 0
+"67 C:\Users\rputra\MPLABXProjects\CuriosityWithADXL345\ADXL345.c
+[v _ADXL345_GetRegisterValue ADXL345_GetRegisterValue `(uc  1 e 1 0 ]
+{
+[v ADXL345_GetRegisterValue@registerAddress registerAddress `uc  1 a 1 wreg ]
+"69
+[v ADXL345_GetRegisterValue@dataBuffer dataBuffer `[2]uc  1 a 2 0 ]
+"70
+[v ADXL345_GetRegisterValue@registerValue registerValue `uc  1 a 1 3 ]
+"67
+[v ADXL345_GetRegisterValue@registerAddress registerAddress `uc  1 a 1 wreg ]
+"68
+[v ADXL345_GetRegisterValue@F85 F85 `[2]uc  1 s 2 F85 ]
+[v ADXL345_GetRegisterValue@registerAddress registerAddress `uc  1 a 1 2 ]
+"92
+} 0
+"236 C:\Users\rputra\MPLABXProjects\CuriosityWithADXL345\Communication.c
+[v _SPI_Read SPI_Read `(uc  1 e 1 0 ]
+{
+"237
+[v SPI_Read@data data `*.4uc  1 p 1 1 ]
+"238
+[v SPI_Read@bytesNumber bytesNumber `uc  1 p 1 2 ]
+"241
+} 0
+"98
+[v _I2C_Write I2C_Write `(uc  1 e 1 0 ]
+{
+[v I2C_Write@slaveAddress slaveAddress `uc  1 a 1 wreg ]
+"105
+[v I2C_Write@byte byte `uc  1 a 1 8 ]
+"104
+[v I2C_Write@acknowledge acknowledge `uc  1 a 1 7 ]
+"103
+[v I2C_Write@status status `uc  1 a 1 5 ]
+"98
+[v I2C_Write@slaveAddress slaveAddress `uc  1 a 1 wreg ]
+"99
+[v I2C_Write@dataBuffer dataBuffer `*.4uc  1 p 1 1 ]
+"100
+[v I2C_Write@bytesNumber bytesNumber `uc  1 p 1 2 ]
+"101
+[v I2C_Write@stopBit stopBit `uc  1 p 1 3 ]
+"103
+[v I2C_Write@slaveAddress slaveAddress `uc  1 a 1 6 ]
+"135
+} 0
+"149
+[v _I2C_Read I2C_Read `(uc  1 e 1 0 ]
+{
+[v I2C_Read@slaveAddress slaveAddress `uc  1 a 1 wreg ]
+"156
+[v I2C_Read@byte byte `uc  1 a 1 9 ]
+"155
+[v I2C_Read@acknowledge acknowledge `uc  1 a 1 8 ]
+"154
+[v I2C_Read@status status `uc  1 a 1 6 ]
+"149
+[v I2C_Read@slaveAddress slaveAddress `uc  1 a 1 wreg ]
+"150
+[v I2C_Read@dataBuffer dataBuffer `*.4uc  1 p 1 1 ]
+"151
+[v I2C_Read@bytesNumber bytesNumber `uc  1 p 1 2 ]
+"152
+[v I2C_Read@stopBit stopBit `uc  1 p 1 3 ]
+"154
+[v I2C_Read@slaveAddress slaveAddress `uc  1 a 1 7 ]
+"193
+} 0
+"51 C:\Users\rputra\MPLABXProjects\CuriosityWithADXL345\interrupt_manager.c
+[v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `II(v  1 e 1 0 ]
+{
+"62
+} 0
+"107 C:\Users\rputra\MPLABXProjects\CuriosityWithADXL345\tmr0.c
+[v _TMR0_ISR TMR0_ISR `(v  1 e 1 0 ]
+{
+"109
+[v TMR0_ISR@CountCallBack CountCallBack `VEui  1 s 2 CountCallBack ]
+"127
+} 0
+"129
+[v _TMR0_CallBack TMR0_CallBack `(v  1 e 1 0 ]
+{
+"137
+} 0
+"143
+[v _TMR0_DefaultInterruptHandler TMR0_DefaultInterruptHandler `(v  1 e 1 0 ]
+{
+"146
+} 0
