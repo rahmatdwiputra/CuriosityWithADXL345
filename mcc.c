@@ -78,13 +78,14 @@ void SYSTEM_Initialize(void)
 {
     PIN_MANAGER_Initialize();
     OSCILLATOR_Initialize();
+//    I2C_Initialize();
     TMR0_Initialize();
 }
 
 void OSCILLATOR_Initialize(void)
 {
-    // SCS INTOSC; SPLLEN disabled; IRCF 8MHz_HF; 
-    OSCCON = 0x72;
+    // SCS INTOSC; SPLLEN disabled; IRCF 4MHz_HF; 
+    OSCCON = 0x6A;
     // TUN 0; 
     OSCTUNE = 0x00;
     // SBOREN disabled; BORFS disabled; 

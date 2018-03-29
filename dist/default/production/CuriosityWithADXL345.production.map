@@ -5,9 +5,9 @@ Linker command line:
 -W-3 --edf=C:\Program Files (x86)\Microchip\xc8\v1.45\dat\en_msgs.txt -cs \
   -h+dist/default/production\CuriosityWithADXL345.production.sym \
   --cmf=dist/default/production\CuriosityWithADXL345.production.cmf -z \
-  -Q16F1619 -oC:\Users\rputra\AppData\Local\Temp\smq0.2 \
+  -Q16F1619 -oC:\Users\rputra\AppData\Local\Temp\sfp4.2 \
   -Mdist/default/production/CuriosityWithADXL345.production.map -E1 \
-  -ver=XC8 -ASTACK=02034h-023efh -pstack=STACK -ACODE=00h-07FFhx4 \
+  -ver=XC8 -ASTACK=02048h-023efh -pstack=STACK -ACODE=00h-07FFhx4 \
   -ASTRCODE=00h-01FFFh -ASTRING=00h-0FFhx32 -ACONST=00h-0FFhx32 \
   -AENTRY=00h-0FFhx32 -ACOMMON=070h-07Fh -ABANK0=020h-06Fh \
   -ABANK1=0A0h-0EFh -ABANK2=0120h-016Fh -ABANK3=01A0h-01EFh \
@@ -31,7 +31,7 @@ Linker command line:
   -ppowerup=CODE -pcinit=CODE -pfunctab=ENTRY -ACONFIG=08007h-08009h \
   -pconfig=CONFIG -DCONFIG=2 -AIDLOC=08000h-08003h -pidloc=IDLOC -DIDLOC=2 \
   -DCODE=2 -DSTRCODE=2 -DSTRING=2 -DCONST=2 -DENTRY=2 -k \
-  C:\Users\rputra\AppData\Local\Temp\smq0.obj \
+  C:\Users\rputra\AppData\Local\Temp\sfp4.obj \
   dist/default/production\CuriosityWithADXL345.production.obj 
 
 Object code version is 3.11
@@ -41,80 +41,90 @@ Machine type is 16F1619
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\rputra\AppData\Local\Temp\smq0.obj
-                end_init                             13       13        2        8       0
+C:\Users\rputra\AppData\Local\Temp\sfp4.obj
+                end_init                             29       29        2        8       0
                 reset_vec                             0        0        2        0       0
                 config                             8007     8007        3    1000E       0
 dist/default/production\CuriosityWithADXL345.production.obj
-                cinit                                15       15        C        8       0
-                intentry                              4        4        F        8       0
-                text17                              240      240        1        8       0
-                text16                              217      217        B        8       0
-                text15                              1F4      1F4       15        8       0
-                text13                               74       74       4D        8       0
-                text12                              148      148       3C        8       0
-                text11                              23F      23F        1        8       0
-                text10                              184      184       3B        8       0
-                text9                                21       21       53        8       0
-                text8                                C1       C1       4A        8       0
-                text7                               23E      23E        1        8       0
-                text6                               10B      10B       3D        8       0
-                text5                               22B      22B        7        8       0
-                text4                               1BF      1BF       20        8       0
-                text3                               238      238        6        8       0
-                text2                               1DF      1DF       15        8       0
-                text1                               222      222        9        8       0
-                maintext                            209      209        E        8       0
-                cstackBANK0                          38       38       18       20       1
-                cstackCOMMON                         70       70        C       70       1
-                clrtext                             232      232        6        8       0
-                bssBANK0                             20       20       18       20       1
-                bssCOMMON                            7C       7C        1       70       1
-                nvBANK0                              50       50        4       20       1
+                cinit                                2B       2B       11        8       0
+                intentry                              4        4       25        8       0
+                text21                              3C8      3C8        3      6EE       0
+                text20                              38C      38C       11      6EE       0
+                text19                              3C4      3C4        4      6EE       0
+                swtext1                             35F      35F       18      6BE       0
+                text18                               3C       3C      130        8       0
+                text17                              3CD      3CD        1      6EE       0
+                text16                              39D      39D        B      6EE       0
+                text15                              320      320       21        8       0
+                text13                              1C1      1C1       55        8       0
+                text12                              216      216       3E        8       0
+                text11                              3CC      3CC        1      6EE       0
+                text10                              291      291       3C        8       0
+                text9                               341      341       1E        8       0
+                text8                               3CB      3CB        1      6EE       0
+                text7                               254      254       3D        8       0
+                text6                               16C      16C       55        8       0
+                text5                               3B1      3B1        7      6EE       0
+                text4                               2F9      2F9       27        8       0
+                text3                               3BE      3BE        6      6EE       0
+                text2                               377      377       15      6EE       0
+                text1                               3A8      3A8        9      6EE       0
+                maintext                            2CD      2CD       2C        8       0
+                cstackBANK0                          43       43       22       20       1
+                cstackCOMMON                         76       76        6       70       1
+                clrtext                             3B8      3B8        6      6EE       0
+                bssBANK0                             20       20       23       20       1
+                bssCOMMON                            70       70        6       70       1
+                nvBANK0                              65       65        3       20       1
 
 TOTAL           Name                               Link     Load   Length     Space
         CLASS   STACK          
 
         CLASS   CODE           
-                end_init                             13       13        2         0
-                cinit                                15       15        C         0
-                intentry                              4        4        F         0
+                end_init                             29       29        2         0
+                cinit                                2B       2B       11         0
+                intentry                              4        4       25         0
                 reset_vec                             0        0        2         0
-                text17                              240      240        1         0
-                text16                              217      217        B         0
-                text15                              1F4      1F4       15         0
-                text13                               74       74       4D         0
-                text12                              148      148       3C         0
-                text11                              23F      23F        1         0
-                text10                              184      184       3B         0
-                text9                                21       21       53         0
-                text8                                C1       C1       4A         0
-                text7                               23E      23E        1         0
-                text6                               10B      10B       3D         0
-                text5                               22B      22B        7         0
-                text4                               1BF      1BF       20         0
-                text3                               238      238        6         0
-                text2                               1DF      1DF       15         0
-                text1                               222      222        9         0
-                maintext                            209      209        E         0
-                clrtext                             232      232        6         0
+                text21                              3C8      3C8        3         0
+                text20                              38C      38C       11         0
+                text19                              3C4      3C4        4         0
+                text18                               3C       3C      130         0
+                text17                              3CD      3CD        1         0
+                text16                              39D      39D        B         0
+                text15                              320      320       21         0
+                text13                              1C1      1C1       55         0
+                text12                              216      216       3E         0
+                text11                              3CC      3CC        1         0
+                text10                              291      291       3C         0
+                text9                               341      341       1E         0
+                text8                               3CB      3CB        1         0
+                text7                               254      254       3D         0
+                text6                               16C      16C       55         0
+                text5                               3B1      3B1        7         0
+                text4                               2F9      2F9       27         0
+                text3                               3BE      3BE        6         0
+                text2                               377      377       15         0
+                text1                               3A8      3A8        9         0
+                maintext                            2CD      2CD       2C         0
+                clrtext                             3B8      3B8        6         0
 
         CLASS   STRCODE        
 
         CLASS   STRING         
 
         CLASS   CONST          
+                swtext1                             35F      35F       18         0
 
         CLASS   ENTRY          
 
         CLASS   COMMON         
-                cstackCOMMON                         70       70        C         1
-                bssCOMMON                            7C       7C        1         1
+                cstackCOMMON                         76       76        6         1
+                bssCOMMON                            70       70        6         1
 
         CLASS   BANK0          
-                cstackBANK0                          38       38       18         1
-                bssBANK0                             20       20       18         1
-                nvBANK0                              50       50        4         1
+                cstackBANK0                          43       43       22         1
+                bssBANK0                             20       20       23         1
+                nvBANK0                              65       65        3         1
 
         CLASS   BANK1          
 
@@ -261,16 +271,18 @@ TOTAL           Name                               Link     Load   Length     Sp
 SEGMENTS        Name                           Load    Length   Top    Selector   Space  Class     Delta
 
                 reset_vec                      000000  000002  000002         0       0  CODE        2
-                intentry                       000004  00023D  000241         8       0  CODE        2
-                bssBANK0                       000020  000034  000054        20       1  BANK0       1
-                cstackCOMMON                   000070  00000D  00007D        70       1  COMMON      1
+                intentry                       000004  00035B  00035F         8       0  CODE        2
+                bssBANK0                       000020  000048  000068        20       1  BANK0       1
+                bssCOMMON                      000070  00000C  00007C        70       1  COMMON      1
+                swtext1                        00035F  000018  000377       6BE       0  CONST       2
+                text2                          000377  000057  0003CE       6EE       0  CODE        2
                 config                         008007  000003  00800A     1000E       0  CONFIG      2
 
 
 UNUSED ADDRESS RANGES
 
         Name                Unused          Largest block    Delta
-        BANK0            00054-0006F              1C           1
+        BANK0            00068-0006F               8           1
         BANK1            000A0-000EF              50           1
         BANK10           00520-0056F              50           1
         BANK11           005A0-005EF              50           1
@@ -285,14 +297,14 @@ UNUSED ADDRESS RANGES
         BANK9            004A0-004EF              50           1
         BIGRAM           02000-023EF             3F0           1
         CODE             00002-00003               2           2
-                         00241-01FFF             800
-        COMMON           0007D-0007D               1           1
+                         003CE-01FFF             800
+        COMMON           0007C-0007D               2           1
         CONST            00002-00003               2           2
-                         00241-01FFF             100
+                         003CE-01FFF             100
         ENTRY            00002-00003               2           2
-                         00241-01FFF             100
+                         003CE-01FFF             100
         IDLOC            08000-08003               4           2
-        RAM              00054-0006F              1C           1
+        RAM              00068-0006F               8           1
                          000A0-000EF              50
                          00120-0016F              50
                          001A0-001EF              50
@@ -337,95 +349,112 @@ UNUSED ADDRESS RANGES
         SFR7             00380-0039F              20           1
         SFR8             00400-0041F              20           1
         SFR9             00480-0049F              20           1
-        STACK            02034-023EF             3BC           1
+        STACK            02048-023EF             3A8           1
         STRCODE          00002-00003               2           2
-                         00241-01FFF            1DBF
+                         003CE-01FFF            1C32
         STRING           00002-00003               2           2
-                         00241-01FFF             100
+                         003CE-01FFF             100
 
                                   Symbol Table
 
-?___lldiv                                 cstackCOMMON 00071
-ADXL345_GetRegisterValue@F85              bssBANK0     00032
-ADXL345_GetRegisterValue@dataBuffer       cstackBANK0  00038
-ADXL345_GetRegisterValue@registerAddress  cstackBANK0  0003A
-ADXL345_GetRegisterValue@registerValue    cstackBANK0  0003B
+ADXL345_GetRegisterValue@F85              bssBANK0     00030
+ADXL345_GetRegisterValue@dataBuffer       cstackBANK0  0004E
+ADXL345_GetRegisterValue@registerAddress  cstackBANK0  00050
+ADXL345_GetRegisterValue@registerValue    cstackBANK0  00051
 ADXL345_GetXyz@F101                       bssBANK0     00020
-ADXL345_Init@commProtocol                 cstackBANK0  0004D
-ADXL345_Init@status                       cstackBANK0  0004E
-ADXL345_SetRegisterValue@F90              bssBANK0     00030
-I2C_Init@brgValue                         cstackBANK0  00049
-I2C_Init@clockFreq                        cstackBANK0  0003D
-I2C_Init@pbFrequency                      cstackBANK0  00045
-I2C_Init@status                           cstackBANK0  0004B
-I2C_Read@acknowledge                      cstackCOMMON 00078
-I2C_Read@byte                             cstackCOMMON 00079
-I2C_Read@bytesNumber                      cstackCOMMON 00072
-I2C_Read@dataBuffer                       cstackCOMMON 00071
-I2C_Read@slaveAddress                     cstackCOMMON 00077
-I2C_Read@status                           cstackCOMMON 00076
-I2C_Read@stopBit                          cstackCOMMON 00073
-I2C_Write@acknowledge                     cstackCOMMON 00077
-I2C_Write@byte                            cstackCOMMON 00078
-I2C_Write@bytesNumber                     cstackCOMMON 00072
-I2C_Write@dataBuffer                      cstackCOMMON 00071
-I2C_Write@slaveAddress                    cstackCOMMON 00076
-I2C_Write@status                          cstackCOMMON 00075
-I2C_Write@stopBit                         cstackCOMMON 00073
-SPI_Init@clockEdg                         cstackCOMMON 00076
-SPI_Init@clockFreq                        cstackCOMMON 00071
-SPI_Init@clockPol                         cstackCOMMON 00075
-SPI_Read@bytesNumber                      cstackCOMMON 00072
-SPI_Read@data                             cstackCOMMON 00071
-TMR0_ISR@CountCallBack                    bssBANK0     00034
-TMR0_SetInterruptHandler@InterruptHandler cstackCOMMON 00071
-_ADXL345_GetRegisterValue                 text10       00184
-_ADXL345_Init                             text6        0010B
+ADXL345_Init@commProtocol                 cstackBANK0  00053
+ADXL345_Init@status                       cstackBANK0  00054
+ADXL345_SetRegisterValue@F90              bssBANK0     0002E
+AccelReadStatus@DataAdd                   cstackBANK0  00043
+AccelReadStatus@SlaveAdd                  cstackBANK0  00046
+AccelReadStatus@TempData                  cstackBANK0  00045
+I2C_ISR@i2c_10bit_address_restart         bssBANK0     00032
+I2C_ISR@i2c_address                       bssCOMMON    00074
+I2C_ISR@i2c_bytes_left                    bssBANK0     00033
+I2C_ISR@pi2c_buf_ptr                      bssBANK0     00034
+I2C_Init@brgValue                         cstackBANK0  0004B
+I2C_Init@clockFreq                        cstackBANK0  00043
+I2C_Init@pbFrequency                      cstackBANK0  00047
+I2C_Init@status                           cstackBANK0  0004D
+I2C_MasterRead@trBlock                    bssBANK0     00038
+I2C_MasterWrite@trBlock                   bssBANK0     0003C
+I2C_Read@acknowledge                      cstackBANK0  0004A
+I2C_Read@byte                             cstackBANK0  0004B
+I2C_Read@bytesNumber                      cstackBANK0  00044
+I2C_Read@dataBuffer                       cstackBANK0  00043
+I2C_Read@slaveAddress                     cstackBANK0  00049
+I2C_Read@status                           cstackBANK0  00048
+I2C_Read@stopBit                          cstackBANK0  00045
+I2C_Write@acknowledge                     cstackBANK0  00049
+I2C_Write@byte                            cstackBANK0  0004A
+I2C_Write@bytesNumber                     cstackBANK0  00044
+I2C_Write@dataBuffer                      cstackBANK0  00043
+I2C_Write@slaveAddress                    cstackBANK0  00048
+I2C_Write@status                          cstackBANK0  00047
+I2C_Write@stopBit                         cstackBANK0  00045
+SPI_Init@clockEdg                         cstackBANK0  00048
+SPI_Init@clockFreq                        cstackBANK0  00043
+SPI_Init@clockPol                         cstackBANK0  00047
+SPI_Read@bytesNumber                      cstackBANK0  00044
+SPI_Read@data                             cstackBANK0  00043
+TMR0_ISR@CountCallBack                    bssBANK0     0002C
+TMR0_SetInterruptHandler@InterruptHandler cstackBANK0  00043
+_ADXL345_GetRegisterValue                 text10       00291
+_ADXL345_Init                             text7        00254
 _ANSELA                                   (abs)        0018C
 _ANSELB                                   (abs)        0018D
 _ANSELC                                   (abs)        0018E
+_AccelReadStatus                          text6        0016C
 _BORCON                                   (abs)        00116
-_I2C_Init                                 text8        000C1
-_I2C_Read                                 text13       00074
-_I2C_Status                               nvBANK0      00053
-_I2C_Write                                text12       00148
+_I2C_BusCollisionISR                      text21       003C8
+_I2C_FunctionComplete                     text20       0038C
+_I2C_ISR                                  text18       0003C
+_I2C_Init                                 text9        00341
+_I2C_Read                                 text13       001C1
+_I2C_Stop                                 text19       003C4
+_I2C_Write                                text12       00216
 _INTCONbits                               (abs)        0000B
 _INTERRUPT_InterruptManager               intentry     00004
 _LATA                                     (abs)        0010C
 _LATB                                     (abs)        0010D
 _LATC                                     (abs)        0010E
+_LATCbits                                 (abs)        0010E
 _ODCONA                                   (abs)        0028C
 _ODCONB                                   (abs)        0028D
 _ODCONC                                   (abs)        0028E
 _OPTION_REG                               (abs)        00095
 _OPTION_REGbits                           (abs)        00095
 _OSCCON                                   (abs)        00099
-_OSCILLATOR_Initialize                    text5        0022B
+_OSCILLATOR_Initialize                    text5        003B1
 _OSCTUNE                                  (abs)        00098
 _PIE1bits                                 (abs)        00090
 _PIE2bits                                 (abs)        00091
-_PIN_MANAGER_Initialize                   text4        001BF
+_PIN_MANAGER_Initialize                   text4        002F9
 _PIR1bits                                 (abs)        00010
 _PIR2bits                                 (abs)        00011
-_SPI_Init                                 text7        0023E
-_SPI_Read                                 text11       0023F
+_RB4PPS                                   (abs)        00E9C
+_RB6PPS                                   (abs)        00E9E
+_SPI_Init                                 text8        003CB
+_SPI_Read                                 text11       003CC
 _SSP1ADD                                  (abs)        00212
 _SSP1BUF                                  (abs)        00211
 _SSP1CON1                                 (abs)        00215
+_SSP1CON1bits                             (abs)        00215
 _SSP1CON2bits                             (abs)        00216
 _SSP1CON3                                 (abs)        00217
 _SSP1STAT                                 (abs)        00214
 _SSP1STATbits                             (abs)        00214
 _SSPBUF                                   (abs)        00211
-_SYSTEM_Initialize                        text1        00222
-_T0CKIPPS                                 (abs)        00E11
+_SSPCLKPPS                                (abs)        00E20
+_SSPDATPPS                                (abs)        00E21
+_SYSTEM_Initialize                        text1        003A8
 _TMR0                                     (abs)        00015
-_TMR0_CallBack                            text16       00217
-_TMR0_DefaultInterruptHandler             text17       00240
-_TMR0_ISR                                 text15       001F4
-_TMR0_Initialize                          text2        001DF
-_TMR0_InterruptHandler                    nvBANK0      00050
-_TMR0_SetInterruptHandler                 text3        00238
+_TMR0_CallBack                            text16       0039D
+_TMR0_DefaultInterruptHandler             text17       003CD
+_TMR0_ISR                                 text15       00320
+_TMR0_Initialize                          text2        00377
+_TMR0_InterruptHandler                    nvBANK0      00065
+_TMR0_SetInterruptHandler                 text3        003BE
 _TRISA                                    (abs)        0008C
 _TRISB                                    (abs)        0008D
 _TRISC                                    (abs)        0008E
@@ -488,7 +517,7 @@ __Hbank9                                  bank9        00000
 __Hbigram                                 bigram       00000
 __HbssBANK0                               bssBANK0     00000
 __HbssCOMMON                              bssCOMMON    00000
-__Hcinit                                  cinit        00021
+__Hcinit                                  cinit        0003C
 __Hclrtext                                clrtext      00000
 __Hcode                                   code         00000
 __Hcommon                                 common       00000
@@ -496,11 +525,11 @@ __Hconfig                                 config       0800A
 __HcstackBANK0                            cstackBANK0  00000
 __HcstackCOMMON                           cstackCOMMON 00000
 __Heeprom_data                            eeprom_data  00000
-__Hend_init                               end_init     00015
+__Hend_init                               end_init     0002B
 __Hfunctab                                functab      00000
 __Hidloc                                  idloc        00000
-__Hinit                                   init         00013
-__Hintentry                               intentry     00013
+__Hinit                                   init         00029
+__Hintentry                               intentry     00029
 __Hmaintext                               maintext     00000
 __HnvBANK0                                nvBANK0      00000
 __Hpowerup                                powerup      00000
@@ -539,7 +568,7 @@ __Hsfr7                                   sfr7         00000
 __Hsfr8                                   sfr8         00000
 __Hsfr9                                   sfr9         00000
 __Hspace_0                                (abs)        0800A
-__Hspace_1                                (abs)        0007D
+__Hspace_1                                (abs)        0007C
 __Hspace_2                                (abs)        00000
 __Hspace_3                                (abs)        00000
 __Hstack                                  stack        00000
@@ -581,7 +610,7 @@ __Lbank9                                  bank9        00000
 __Lbigram                                 bigram       00000
 __LbssBANK0                               bssBANK0     00000
 __LbssCOMMON                              bssCOMMON    00000
-__Lcinit                                  cinit        00015
+__Lcinit                                  cinit        0002B
 __Lclrtext                                clrtext      00000
 __Lcode                                   code         00000
 __Lcommon                                 common       00000
@@ -589,10 +618,10 @@ __Lconfig                                 config       08007
 __LcstackBANK0                            cstackBANK0  00000
 __LcstackCOMMON                           cstackCOMMON 00000
 __Leeprom_data                            eeprom_data  00000
-__Lend_init                               end_init     00013
+__Lend_init                               end_init     00029
 __Lfunctab                                functab      00000
 __Lidloc                                  idloc        00000
-__Linit                                   init         00013
+__Linit                                   init         00029
 __Lintentry                               intentry     00004
 __Lmaintext                               maintext     00000
 __LnvBANK0                                nvBANK0      00000
@@ -639,63 +668,72 @@ __Lstack                                  stack        00000
 __Lstrings                                strings      00000
 __Ltext                                   text         00000
 __S0                                      (abs)        0800A
-__S1                                      (abs)        0007D
+__S1                                      (abs)        0007C
 __S2                                      (abs)        00000
 ___int_sp                                 stack        00000
 ___latbits                                (abs)        00002
-___lldiv                                  text9        00021
-___lldiv@counter                          cstackBANK0  0003C
-___lldiv@dividend                         cstackCOMMON 00075
-___lldiv@divisor                          cstackCOMMON 00071
-___lldiv@quotient                         cstackBANK0  00038
 ___sp                                     stack        00000
-__end_of_ADXL345_GetRegisterValue         text10       001BF
-__end_of_ADXL345_Init                     text6        00148
-__end_of_I2C_Init                         text8        0010B
-__end_of_I2C_Read                         text13       000C1
-__end_of_I2C_Write                        text12       00184
-__end_of_INTERRUPT_InterruptManager       intentry     00013
-__end_of_OSCILLATOR_Initialize            text5        00232
-__end_of_PIN_MANAGER_Initialize           text4        001DF
-__end_of_SPI_Init                         text7        0023F
-__end_of_SPI_Read                         text11       00240
-__end_of_SYSTEM_Initialize                text1        0022B
-__end_of_TMR0_CallBack                    text16       00222
-__end_of_TMR0_DefaultInterruptHandler     text17       00241
-__end_of_TMR0_ISR                         text15       00209
-__end_of_TMR0_Initialize                  text2        001F4
-__end_of_TMR0_SetInterruptHandler         text3        0023E
-__end_of___lldiv                          text9        00074
-__end_of__initialization                  cinit        0001D
-__end_of_main                             maintext     00217
-__initialization                          cinit        00015
+__end_of_ADXL345_GetRegisterValue         text10       002CD
+__end_of_ADXL345_Init                     text7        00291
+__end_of_AccelReadStatus                  text6        001C1
+__end_of_I2C_BusCollisionISR              text21       003CB
+__end_of_I2C_FunctionComplete             text20       0039D
+__end_of_I2C_ISR                          text18       0016C
+__end_of_I2C_Init                         text9        0035F
+__end_of_I2C_Read                         text13       00216
+__end_of_I2C_Stop                         text19       003C8
+__end_of_I2C_Write                        text12       00254
+__end_of_INTERRUPT_InterruptManager       intentry     00029
+__end_of_OSCILLATOR_Initialize            text5        003B8
+__end_of_PIN_MANAGER_Initialize           text4        00320
+__end_of_SPI_Init                         text8        003CC
+__end_of_SPI_Read                         text11       003CD
+__end_of_SYSTEM_Initialize                text1        003B1
+__end_of_TMR0_CallBack                    text16       003A8
+__end_of_TMR0_DefaultInterruptHandler     text17       003CE
+__end_of_TMR0_ISR                         text15       00341
+__end_of_TMR0_Initialize                  text2        0038C
+__end_of_TMR0_SetInterruptHandler         text3        003C4
+__end_of__initialization                  cinit        00038
+__end_of_main                             maintext     002F9
+__initialization                          cinit        0002B
 __pbssBANK0                               bssBANK0     00020
-__pbssCOMMON                              bssCOMMON    0007C
-__pcstackBANK0                            cstackBANK0  00038
-__pcstackCOMMON                           cstackCOMMON 00070
+__pbssCOMMON                              bssCOMMON    00070
+__pcstackBANK0                            cstackBANK0  00043
+__pcstackCOMMON                           cstackCOMMON 00076
 __pintentry                               intentry     00004
-__pmaintext                               maintext     00209
-__pnvBANK0                                nvBANK0      00050
-__ptext1                                  text1        00222
-__ptext10                                 text10       00184
-__ptext11                                 text11       0023F
-__ptext12                                 text12       00148
-__ptext13                                 text13       00074
-__ptext15                                 text15       001F4
-__ptext16                                 text16       00217
-__ptext17                                 text17       00240
-__ptext2                                  text2        001DF
-__ptext3                                  text3        00238
-__ptext4                                  text4        001BF
-__ptext5                                  text5        0022B
-__ptext6                                  text6        0010B
-__ptext7                                  text7        0023E
-__ptext8                                  text8        000C1
-__ptext9                                  text9        00021
+__pmaintext                               maintext     002CD
+__pnvBANK0                                nvBANK0      00065
+__pswtext1                                swtext1      0035F
+__ptext1                                  text1        003A8
+__ptext10                                 text10       00291
+__ptext11                                 text11       003CC
+__ptext12                                 text12       00216
+__ptext13                                 text13       001C1
+__ptext15                                 text15       00320
+__ptext16                                 text16       0039D
+__ptext17                                 text17       003CD
+__ptext18                                 text18       0003C
+__ptext19                                 text19       003C4
+__ptext2                                  text2        00377
+__ptext20                                 text20       0038C
+__ptext21                                 text21       003C8
+__ptext3                                  text3        003BE
+__ptext4                                  text4        002F9
+__ptext5                                  text5        003B1
+__ptext6                                  text6        0016C
+__ptext7                                  text7        00254
+__ptext8                                  text8        003CB
+__ptext9                                  text9        00341
 __size_of_ADXL345_GetRegisterValue        (abs)        00000
 __size_of_ADXL345_Init                    (abs)        00000
+__size_of_AccelReadStatus                 (abs)        00000
+__size_of_I2C_BusCollisionISR             (abs)        00000
+__size_of_I2C_FunctionComplete            (abs)        00000
+__size_of_I2C_ISR                         (abs)        00000
 __size_of_I2C_Init                        (abs)        00000
 __size_of_I2C_Read                        (abs)        00000
+__size_of_I2C_Stop                        (abs)        00000
 __size_of_I2C_Write                       (abs)        00000
 __size_of_INTERRUPT_InterruptManager      (abs)        00000
 __size_of_OSCILLATOR_Initialize           (abs)        00000
@@ -708,16 +746,21 @@ __size_of_TMR0_DefaultInterruptHandler    (abs)        00000
 __size_of_TMR0_ISR                        (abs)        00000
 __size_of_TMR0_Initialize                 (abs)        00000
 __size_of_TMR0_SetInterruptHandler        (abs)        00000
-__size_of___lldiv                         (abs)        00000
 __size_of_main                            (abs)        00000
 _communicationType                        bssBANK0     00037
-_fullResolutionSet                        bssBANK0     00036
-_main                                     maintext     00209
-_selectedRange                            bssCOMMON    0007C
-_timer0ReloadVal                          nvBANK0      00052
+_fullResolutionSet                        bssCOMMON    00072
+_i2c_object                               bssBANK0     00027
+_i2c_state                                bssCOMMON    00071
+_i2c_tr_queue                             bssBANK0     00040
+_i2c_trb_count                            bssBANK0     00036
+_main                                     maintext     002CD
+_p_i2c_current                            bssBANK0     00035
+_p_i2c_trb_current                        bssCOMMON    00070
+_selectedRange                            bssCOMMON    00073
+_timer0ReloadVal                          nvBANK0      00067
 btemp                                     (abs)        0007E
-clear_ram0                                clrtext      00232
-end_of_initialization                     cinit        0001D
+clear_ram0                                clrtext      003B8
+end_of_initialization                     cinit        00038
 int$flags                                 (abs)        0007E
 intlevel0                                 functab      00000
 intlevel1                                 functab      00000
@@ -725,11 +768,20 @@ intlevel2                                 functab      00000
 intlevel3                                 functab      00000
 intlevel4                                 functab      00000
 intlevel5                                 functab      00000
+main@AccelStatus                          cstackBANK0  00063
+main@AccelX                               cstackBANK0  00056
+main@AccelXtemp                           cstackBANK0  0005C
+main@AccelY                               cstackBANK0  00058
+main@AccelYtemp                           cstackBANK0  0005E
+main@AccelZ                               cstackBANK0  0005A
+main@AccelZtemp                           cstackBANK0  00060
+main@counter                              cstackBANK0  00064
+main@i2cStatus                            cstackBANK0  00062
 reset_vec                                 reset_vec    00000
 stackhi                                   (abs)        023EF
-stacklo                                   (abs)        02034
-start                                     init         00013
-start_initialization                      cinit        00015
+stacklo                                   (abs)        02048
+start                                     init         00029
+start_initialization                      cinit        0002B
 wtemp0                                    (abs)        0007E
 
 
@@ -737,11 +789,29 @@ FUNCTION INFORMATION:
 
  *************** function _main *****************
  Defined at:
-		line 54 in file "main.c"
+		line 45 in file "../projectswithmick/CuriositywithADXL345Port/main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
-		None
+  AccelZtemp      2   29[BANK0 ] int 
+  AccelYtemp      2   27[BANK0 ] int 
+  AccelXtemp      2   25[BANK0 ] int 
+  AccelZ          2   23[BANK0 ] int 
+  AccelY          2   21[BANK0 ] int 
+  AccelX          2   19[BANK0 ] int 
+  z               2    0        short 
+  y               2    0        short 
+  x               2    0        short 
+  counter         1   33[BANK0 ] unsigned char 
+  AccelStatus     1   32[BANK0 ] unsigned char 
+  i2cStatus       1   31[BANK0 ] unsigned char 
+  TempZLSB        1    0        unsigned char 
+  TempZMSB        1    0        unsigned char 
+  TempYLSB        1    0        unsigned char 
+  TempYMSB        1    0        unsigned char 
+  TempXLSB        1    0        unsigned char 
+  TempXMSB        1    0        unsigned char 
+  DeviceID        1    0        unsigned char 
  Return value:  Size  Location     Type
                   1    wreg      void 
  Registers used:
@@ -752,13 +822,14 @@ FUNCTION INFORMATION:
 		Unchanged: 
  Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12
       Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         0      15       0       0       0       0       0       0       0       0       0       0       0       0
       Temps:          0       1       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         0       1       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        1 bytes
+      Totals:         0      16       0       0       0       0       0       0       0       0       0       0       0       0
+Total ram usage:       16 bytes
  Hardware stack levels required when called:    7
  This function calls:
 		_ADXL345_Init
+		_AccelReadStatus
 		_SYSTEM_Initialize
  This function is called by:
 		Startup code after reset
@@ -767,7 +838,7 @@ Total ram usage:        1 bytes
 
  *************** function _SYSTEM_Initialize *****************
  Defined at:
-		line 77 in file "mcc.c"
+		line 77 in file "../projectswithmick/CuriositywithADXL345Port/mcc.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -799,7 +870,7 @@ Total ram usage:        0 bytes
 
  *************** function _TMR0_Initialize *****************
  Defined at:
-		line 63 in file "tmr0.c"
+		line 63 in file "../projectswithmick/CuriositywithADXL345Port/tmr0.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -815,8 +886,8 @@ Total ram usage:        0 bytes
  Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12
       Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0
       Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          1       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         1       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Temps:          0       1       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         0       1       0       0       0       0       0       0       0       0       0       0       0       0
 Total ram usage:        1 bytes
  Hardware stack levels used:    1
  Hardware stack levels required when called:    5
@@ -829,9 +900,9 @@ Total ram usage:        1 bytes
 
  *************** function _TMR0_SetInterruptHandler *****************
  Defined at:
-		line 139 in file "tmr0.c"
+		line 139 in file "../projectswithmick/CuriositywithADXL345Port/tmr0.c"
  Parameters:    Size  Location     Type
-  InterruptHan    2    1[COMMON] PTR FTN()void 
+  InterruptHan    2    0[BANK0 ] PTR FTN()void 
 		 -> TMR0_DefaultInterruptHandler(1), 
  Auto vars:     Size  Location     Type
 		None
@@ -844,10 +915,10 @@ Total ram usage:        1 bytes
 		On exit  : 
 		Unchanged: 
  Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12
-      Params:         2       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Params:         0       2       0       0       0       0       0       0       0       0       0       0       0       0
       Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0
       Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         2       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         0       2       0       0       0       0       0       0       0       0       0       0       0       0
 Total ram usage:        2 bytes
  Hardware stack levels used:    1
  Hardware stack levels required when called:    4
@@ -860,7 +931,7 @@ Total ram usage:        2 bytes
 
  *************** function _PIN_MANAGER_Initialize *****************
  Defined at:
-		line 52 in file "pin_manager.c"
+		line 52 in file "../projectswithmick/CuriositywithADXL345Port/pin_manager.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -890,7 +961,7 @@ Total ram usage:        0 bytes
 
  *************** function _OSCILLATOR_Initialize *****************
  Defined at:
-		line 84 in file "mcc.c"
+		line 85 in file "../projectswithmick/CuriositywithADXL345Port/mcc.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -918,14 +989,46 @@ Total ram usage:        0 bytes
  This function uses a non-reentrant model
 
 
+ *************** function _AccelReadStatus *****************
+ Defined at:
+		line 292 in file "../projectswithmick/CuriositywithADXL345Port/main.c"
+ Parameters:    Size  Location     Type
+  SlaveAdd        1    wreg     unsigned char 
+  DataAdd         1    0[BANK0 ] unsigned char 
+ Auto vars:     Size  Location     Type
+  SlaveAdd        1    3[BANK0 ] unsigned char 
+  TempData        1    2[BANK0 ] unsigned char 
+ Return value:  Size  Location     Type
+                  1    wreg      unsigned char 
+ Registers used:
+		wreg, status,2, status,0
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12
+      Params:         0       1       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         0       2       0       0       0       0       0       0       0       0       0       0       0       0
+      Temps:          0       1       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         0       4       0       0       0       0       0       0       0       0       0       0       0       0
+Total ram usage:        4 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    4
+ This function calls:
+		Nothing
+ This function is called by:
+		_main
+ This function uses a non-reentrant model
+
+
  *************** function _ADXL345_Init *****************
  Defined at:
-		line 135 in file "ADXL345.c"
+		line 135 in file "../projectswithmick/CuriositywithADXL345Port/ADXL345.c"
  Parameters:    Size  Location     Type
   commProtocol    1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
-  commProtocol    1   21[BANK0 ] unsigned char 
-  status          1   22[BANK0 ] unsigned char 
+  commProtocol    1   16[BANK0 ] unsigned char 
+  status          1   17[BANK0 ] unsigned char 
  Return value:  Size  Location     Type
                   1    wreg      unsigned char 
  Registers used:
@@ -953,12 +1056,12 @@ Total ram usage:        3 bytes
 
  *************** function _SPI_Init *****************
  Defined at:
-		line 218 in file "Communication.c"
+		line 218 in file "../projectswithmick/CuriositywithADXL345Port/Communication.c"
  Parameters:    Size  Location     Type
   lsbFirst        1    wreg     unsigned char 
-  clockFreq       4    1[COMMON] unsigned long 
-  clockPol        1    5[COMMON] unsigned char 
-  clockEdg        1    6[COMMON] unsigned char 
+  clockFreq       4    0[BANK0 ] unsigned long 
+  clockPol        1    4[BANK0 ] unsigned char 
+  clockEdg        1    5[BANK0 ] unsigned char 
  Auto vars:     Size  Location     Type
   lsbFirst        1    0[COMMON] unsigned char 
  Return value:  Size  Location     Type
@@ -970,10 +1073,10 @@ Total ram usage:        3 bytes
 		On exit  : 
 		Unchanged: 
  Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12
-      Params:         6       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Params:         0       6       0       0       0       0       0       0       0       0       0       0       0       0
       Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0
       Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         6       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         0       6       0       0       0       0       0       0       0       0       0       0       0       0
 Total ram usage:        6 bytes
  Hardware stack levels used:    1
  Hardware stack levels required when called:    4
@@ -986,17 +1089,17 @@ Total ram usage:        6 bytes
 
  *************** function _I2C_Init *****************
  Defined at:
-		line 56 in file "Communication.c"
+		line 56 in file "../projectswithmick/CuriositywithADXL345Port/Communication.c"
  Parameters:    Size  Location     Type
-  clockFreq       4    5[BANK0 ] unsigned long 
+  clockFreq       4    0[BANK0 ] unsigned long 
  Auto vars:     Size  Location     Type
-  pbFrequency     4   13[BANK0 ] unsigned long 
-  brgValue        2   17[BANK0 ] unsigned short 
-  status          1   19[BANK0 ] unsigned char 
+  pbFrequency     4    4[BANK0 ] unsigned long 
+  brgValue        2    8[BANK0 ] unsigned short 
+  status          1   10[BANK0 ] unsigned char 
  Return value:  Size  Location     Type
                   1    wreg      unsigned char 
  Registers used:
-		wreg, status,2, status,0, pclath, cstack
+		wreg, status,2
  Tracked objects:
 		On entry : 
 		On exit  : 
@@ -1004,59 +1107,27 @@ Total ram usage:        6 bytes
  Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12
       Params:         0       4       0       0       0       0       0       0       0       0       0       0       0       0
       Locals:         0       7       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          0       4       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         0      15       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:       15 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    5
- This function calls:
-		___lldiv
- This function is called by:
-		_ADXL345_Init
- This function uses a non-reentrant model
-
-
- *************** function ___lldiv *****************
- Defined at:
-		line 6 in file "C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lldiv.c"
- Parameters:    Size  Location     Type
-  divisor         4    1[COMMON] unsigned long 
-  dividend        4    5[COMMON] unsigned long 
- Auto vars:     Size  Location     Type
-  quotient        4    0[BANK0 ] unsigned long 
-  counter         1    4[BANK0 ] unsigned char 
- Return value:  Size  Location     Type
-                  4    1[COMMON] unsigned long 
- Registers used:
-		wreg, status,2, status,0
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12
-      Params:         8       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         0       5       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          1       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         9       5       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:       14 bytes
+      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         0      11       0       0       0       0       0       0       0       0       0       0       0       0
+Total ram usage:       11 bytes
  Hardware stack levels used:    1
  Hardware stack levels required when called:    4
  This function calls:
 		Nothing
  This function is called by:
-		_I2C_Init
+		_ADXL345_Init
  This function uses a non-reentrant model
 
 
  *************** function _ADXL345_GetRegisterValue *****************
  Defined at:
-		line 67 in file "ADXL345.c"
+		line 67 in file "../projectswithmick/CuriositywithADXL345Port/ADXL345.c"
  Parameters:    Size  Location     Type
   registerAddr    1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
-  registerAddr    1    2[BANK0 ] unsigned char 
-  dataBuffer      2    0[BANK0 ] unsigned char [2]
-  registerValu    1    3[BANK0 ] unsigned char 
+  registerAddr    1   13[BANK0 ] unsigned char 
+  dataBuffer      2   11[BANK0 ] unsigned char [2]
+  registerValu    1   14[BANK0 ] unsigned char 
  Return value:  Size  Location     Type
                   1    wreg      unsigned char 
  Registers used:
@@ -1068,8 +1139,8 @@ Total ram usage:       14 bytes
  Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12
       Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0
       Locals:         0       4       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          2       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         2       4       0       0       0       0       0       0       0       0       0       0       0       0
+      Temps:          0       2       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         0       6       0       0       0       0       0       0       0       0       0       0       0       0
 Total ram usage:        6 bytes
  Hardware stack levels used:    1
  Hardware stack levels required when called:    5
@@ -1090,12 +1161,12 @@ Total ram usage:        6 bytes
 
  *************** function _SPI_Read *****************
  Defined at:
-		line 236 in file "Communication.c"
+		line 236 in file "../projectswithmick/CuriositywithADXL345Port/Communication.c"
  Parameters:    Size  Location     Type
   slaveDeviceI    1    wreg     unsigned char 
-  data            1    1[COMMON] PTR unsigned char 
+  data            1    0[BANK0 ] PTR unsigned char 
 		 -> ADXL345_GetXyz@readBuffer(7), ADXL345_GetRegisterValue@dataBuffer(2), 
-  bytesNumber     1    2[COMMON] unsigned char 
+  bytesNumber     1    1[BANK0 ] unsigned char 
  Auto vars:     Size  Location     Type
   slaveDeviceI    1    0[COMMON] unsigned char 
  Return value:  Size  Location     Type
@@ -1107,10 +1178,10 @@ Total ram usage:        6 bytes
 		On exit  : 
 		Unchanged: 
  Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12
-      Params:         2       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Params:         0       2       0       0       0       0       0       0       0       0       0       0       0       0
       Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0
       Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         2       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         0       2       0       0       0       0       0       0       0       0       0       0       0       0
 Total ram usage:        2 bytes
  Hardware stack levels used:    1
  Hardware stack levels required when called:    4
@@ -1124,18 +1195,18 @@ Total ram usage:        2 bytes
 
  *************** function _I2C_Write *****************
  Defined at:
-		line 98 in file "Communication.c"
+		line 98 in file "../projectswithmick/CuriositywithADXL345Port/Communication.c"
  Parameters:    Size  Location     Type
   slaveAddress    1    wreg     unsigned char 
-  dataBuffer      1    1[COMMON] PTR unsigned char 
+  dataBuffer      1    0[BANK0 ] PTR unsigned char 
 		 -> ADXL345_GetXyz@firstRegAddress(1), ADXL345_SetRegisterValue@dataBuffer(2), ADXL345_GetRegisterValue@registerAddress(1), 
-  bytesNumber     1    2[COMMON] unsigned char 
-  stopBit         1    3[COMMON] unsigned char 
+  bytesNumber     1    1[BANK0 ] unsigned char 
+  stopBit         1    2[BANK0 ] unsigned char 
  Auto vars:     Size  Location     Type
-  slaveAddress    1    6[COMMON] unsigned char 
-  byte            1    8[COMMON] unsigned char 
-  acknowledge     1    7[COMMON] unsigned char 
-  status          1    5[COMMON] unsigned char 
+  slaveAddress    1    5[BANK0 ] unsigned char 
+  byte            1    7[BANK0 ] unsigned char 
+  acknowledge     1    6[BANK0 ] unsigned char 
+  status          1    4[BANK0 ] unsigned char 
  Return value:  Size  Location     Type
                   1    wreg      unsigned char 
  Registers used:
@@ -1145,10 +1216,10 @@ Total ram usage:        2 bytes
 		On exit  : 
 		Unchanged: 
  Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12
-      Params:         3       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         4       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          1       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         8       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Params:         0       3       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         0       4       0       0       0       0       0       0       0       0       0       0       0       0
+      Temps:          0       1       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         0       8       0       0       0       0       0       0       0       0       0       0       0       0
 Total ram usage:        8 bytes
  Hardware stack levels used:    1
  Hardware stack levels required when called:    4
@@ -1163,18 +1234,18 @@ Total ram usage:        8 bytes
 
  *************** function _I2C_Read *****************
  Defined at:
-		line 149 in file "Communication.c"
+		line 149 in file "../projectswithmick/CuriositywithADXL345Port/Communication.c"
  Parameters:    Size  Location     Type
   slaveAddress    1    wreg     unsigned char 
-  dataBuffer      1    1[COMMON] PTR unsigned char 
+  dataBuffer      1    0[BANK0 ] PTR unsigned char 
 		 -> ADXL345_GetXyz@readBuffer(7), ADXL345_GetRegisterValue@registerValue(1), 
-  bytesNumber     1    2[COMMON] unsigned char 
-  stopBit         1    3[COMMON] unsigned char 
+  bytesNumber     1    1[BANK0 ] unsigned char 
+  stopBit         1    2[BANK0 ] unsigned char 
  Auto vars:     Size  Location     Type
-  slaveAddress    1    7[COMMON] unsigned char 
-  byte            1    9[COMMON] unsigned char 
-  acknowledge     1    8[COMMON] unsigned char 
-  status          1    6[COMMON] unsigned char 
+  slaveAddress    1    6[BANK0 ] unsigned char 
+  byte            1    8[BANK0 ] unsigned char 
+  acknowledge     1    7[BANK0 ] unsigned char 
+  status          1    5[BANK0 ] unsigned char 
  Return value:  Size  Location     Type
                   1    wreg      unsigned char 
  Registers used:
@@ -1184,10 +1255,10 @@ Total ram usage:        8 bytes
 		On exit  : 
 		Unchanged: 
  Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12
-      Params:         3       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         4       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          2       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         9       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Params:         0       3       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         0       4       0       0       0       0       0       0       0       0       0       0       0       0
+      Temps:          0       2       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         0       9       0       0       0       0       0       0       0       0       0       0       0       0
 Total ram usage:        9 bytes
  Hardware stack levels used:    1
  Hardware stack levels required when called:    4
@@ -1201,7 +1272,7 @@ Total ram usage:        9 bytes
 
  *************** function _INTERRUPT_InterruptManager *****************
  Defined at:
-		line 51 in file "interrupt_manager.c"
+		line 51 in file "../projectswithmick/CuriositywithADXL345Port/interrupt_manager.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1209,7 +1280,7 @@ Total ram usage:        9 bytes
  Return value:  Size  Location     Type
                   1    wreg      void 
  Registers used:
-		wreg, status,2, status,0, pclath, cstack
+		wreg, fsr0l, fsr0h, fsr1l, fsr1h, status,2, status,0, pclath, cstack
  Tracked objects:
 		On entry : 
 		On exit  : 
@@ -1223,6 +1294,8 @@ Total ram usage:        1 bytes
  Hardware stack levels used:    1
  Hardware stack levels required when called:    3
  This function calls:
+		_I2C_BusCollisionISR
+		_I2C_ISR
 		_TMR0_ISR
  This function is called by:
 		Interrupt level 1
@@ -1231,7 +1304,7 @@ Total ram usage:        1 bytes
 
  *************** function _TMR0_ISR *****************
  Defined at:
-		line 107 in file "tmr0.c"
+		line 107 in file "../projectswithmick/CuriositywithADXL345Port/tmr0.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1261,7 +1334,7 @@ Total ram usage:        0 bytes
 
  *************** function _TMR0_CallBack *****************
  Defined at:
-		line 129 in file "tmr0.c"
+		line 129 in file "../projectswithmick/CuriositywithADXL345Port/tmr0.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1292,7 +1365,7 @@ Total ram usage:        0 bytes
 
  *************** function _TMR0_DefaultInterruptHandler *****************
  Defined at:
-		line 143 in file "tmr0.c"
+		line 143 in file "../projectswithmick/CuriositywithADXL345Port/tmr0.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1320,62 +1393,184 @@ Total ram usage:        0 bytes
  This function uses a non-reentrant model
 
 
+ *************** function _I2C_ISR *****************
+ Defined at:
+		line 233 in file "../projectswithmick/CuriositywithADXL345Port/i2c.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		wreg, fsr0l, fsr0h, fsr1l, fsr1h, status,2, status,0, pclath, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12
+      Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Temps:          4       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         4       0       0       0       0       0       0       0       0       0       0       0       0       0
+Total ram usage:        4 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    1
+ This function calls:
+		_I2C_FunctionComplete
+		_I2C_Stop
+ This function is called by:
+		_INTERRUPT_InterruptManager
+ This function uses a non-reentrant model
+
+
+ *************** function _I2C_Stop *****************
+ Defined at:
+		line 581 in file "../projectswithmick/CuriositywithADXL345Port/i2c.c"
+ Parameters:    Size  Location     Type
+  completion_c    1    wreg     enum E11987
+ Auto vars:     Size  Location     Type
+  completion_c    1    0[COMMON] enum E11987
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		wreg, fsr1l, fsr1h, status,2, status,0
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12
+      Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0
+Total ram usage:        0 bytes
+ Hardware stack levels used:    1
+ This function calls:
+		Nothing
+ This function is called by:
+		_I2C_ISR
+ This function uses a non-reentrant model
+
+
+ *************** function _I2C_FunctionComplete *****************
+ Defined at:
+		line 563 in file "../projectswithmick/CuriositywithADXL345Port/i2c.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		wreg, status,2, status,0
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12
+      Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Temps:          1       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         1       0       0       0       0       0       0       0       0       0       0       0       0       0
+Total ram usage:        1 bytes
+ Hardware stack levels used:    1
+ This function calls:
+		Nothing
+ This function is called by:
+		_I2C_ISR
+ This function uses a non-reentrant model
+
+
+ *************** function _I2C_BusCollisionISR *****************
+ Defined at:
+		line 728 in file "../projectswithmick/CuriositywithADXL345Port/i2c.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		None
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12
+      Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0
+Total ram usage:        0 bytes
+ Hardware stack levels used:    1
+ This function calls:
+		Nothing
+ This function is called by:
+		_INTERRUPT_InterruptManager
+ This function uses a non-reentrant model
+
+
 
 MODULE INFORMATION
 
 Module		Function		Class		Link	Load	Size
-ADXL345.c
-		_ADXL345_Init  		CODE           	010B	0000	62
-		_ADXL345_GetRegisterValue		CODE           	0184	0000	60
+../projectswithmick/CuriositywithADXL345Port/mcc.c
+		_OSCILLATOR_Initialize		CODE           	03B1	0000	8
+		_SYSTEM_Initialize		CODE           	03A8	0000	10
 
-ADXL345.c estimated size: 122
+../projectswithmick/CuriositywithADXL345Port/mcc.c estimated size: 18
 
-tmr0.c
-		_TMR0_SetInterruptHandler		CODE           	0238	0000	7
-		_TMR0_DefaultInterruptHandler		CODE           	0240	0000	2
-		_TMR0_CallBack 		CODE           	0217	0000	12
-		_TMR0_ISR      		CODE           	01F4	0000	22
-		_TMR0_Initialize		CODE           	01DF	0000	22
+../projectswithmick/CuriositywithADXL345Port/interrupt_manager.c
+		_INTERRUPT_InterruptManager		CODE           	0004	0000	38
 
-tmr0.c estimated size: 65
+../projectswithmick/CuriositywithADXL345Port/interrupt_manager.c estimated size: 38
 
-Communication.c
-		_I2C_Write     		CODE           	0148	0000	61
-		_I2C_Read      		CODE           	0074	0000	78
-		_SPI_Read      		CODE           	023F	0000	2
-		_I2C_Init      		CODE           	00C1	0000	75
-		_SPI_Init      		CODE           	023E	0000	2
+../projectswithmick/CuriositywithADXL345Port/tmr0.c
+		_TMR0_SetInterruptHandler		CODE           	03BE	0000	7
+		_TMR0_DefaultInterruptHandler		CODE           	03CD	0000	2
+		_TMR0_CallBack 		CODE           	039D	0000	12
+		_TMR0_ISR      		CODE           	0320	0000	34
+		_TMR0_Initialize		CODE           	0377	0000	22
 
-Communication.c estimated size: 218
+../projectswithmick/CuriositywithADXL345Port/tmr0.c estimated size: 77
+
+../projectswithmick/CuriositywithADXL345Port/ADXL345.c
+		_ADXL345_Init  		CODE           	0254	0000	62
+		_ADXL345_GetRegisterValue		CODE           	0291	0000	61
+
+../projectswithmick/CuriositywithADXL345Port/ADXL345.c estimated size: 123
+
+../projectswithmick/CuriositywithADXL345Port/i2c.c
+		_I2C_FunctionComplete		CODE           	038C	0000	18
+		_I2C_ISR       		CODE           	003C	0000	305
+		_I2C_Stop      		CODE           	03C4	0000	5
+		_I2C_BusCollisionISR		CODE           	03C8	0000	4
+
+../projectswithmick/CuriositywithADXL345Port/i2c.c estimated size: 332
 
 shared
-		__initialization		CODE           	0015	0000	9
+		__initialization		CODE           	002B	0000	14
 
-shared estimated size: 9
+shared estimated size: 14
 
-mcc.c
-		_OSCILLATOR_Initialize		CODE           	022B	0000	8
-		_SYSTEM_Initialize		CODE           	0222	0000	10
+../projectswithmick/CuriositywithADXL345Port/main.c
+		_main          		CODE           	02CD	0000	45
+		_AccelReadStatus		CODE           	016C	0000	86
 
-mcc.c estimated size: 18
+../projectswithmick/CuriositywithADXL345Port/main.c estimated size: 131
 
-interrupt_manager.c
-		_INTERRUPT_InterruptManager		CODE           	0004	0000	16
+../projectswithmick/CuriositywithADXL345Port/pin_manager.c
+		_PIN_MANAGER_Initialize		CODE           	02F9	0000	40
 
-interrupt_manager.c estimated size: 16
+../projectswithmick/CuriositywithADXL345Port/pin_manager.c estimated size: 40
 
-C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lldiv.c
-		___lldiv       		CODE           	0021	0000	84
+../projectswithmick/CuriositywithADXL345Port/Communication.c
+		_I2C_Write     		CODE           	0216	0000	63
+		_I2C_Read      		CODE           	01C1	0000	86
+		_SPI_Read      		CODE           	03CC	0000	2
+		_I2C_Init      		CODE           	0341	0000	31
+		_SPI_Init      		CODE           	03CB	0000	2
 
-C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lldiv.c estimated size: 84
-
-pin_manager.c
-		_PIN_MANAGER_Initialize		CODE           	01BF	0000	33
-
-pin_manager.c estimated size: 33
-
-main.c
-		_main          		CODE           	0209	0000	15
-
-main.c estimated size: 15
+../projectswithmick/CuriositywithADXL345Port/Communication.c estimated size: 184
 

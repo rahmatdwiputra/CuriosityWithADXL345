@@ -49,7 +49,7 @@
 
 #include <xc.h>
 #include "tmr0.h"
-
+#include "pin_manager.h"
 /**
   Section: Global Variables Definitions
 */
@@ -64,14 +64,14 @@ void TMR0_Initialize(void)
 {
     // Set TMR0 to the options selected in the User Interface
 	
-    // PSA assigned; PS 1:4; TMRSE Increment_hi_lo; mask the nWPUEN and INTEDG bits
-    OPTION_REG = (uint8_t)((OPTION_REG & 0xC0) | 0xF1 & 0x3F); 
+    // PSA assigned; PS 1:8; TMRSE Increment_hi_lo; mask the nWPUEN and INTEDG bits
+    OPTION_REG = (uint8_t)((OPTION_REG & 0xC0) | 0xD2 & 0x3F); 
 	
-    // TMR0 206; 
-    TMR0 = 0xCE;
+    // TMR0 6; 
+    TMR0 = 0x06;
 	
     // Load the TMR value to reload variable
-    timer0ReloadVal= 206;
+    timer0ReloadVal= 6;
 
     // Clear Interrupt flag before enabling the interrupt
     INTCONbits.TMR0IF = 0;
@@ -122,7 +122,7 @@ void TMR0_ISR(void)
         // reset ticker counter
         CountCallBack = 0;
     }
-
+    LED_D7_Toggle();
     // add your TMR0 interrupt custom code
 }
 

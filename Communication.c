@@ -56,7 +56,7 @@
 unsigned char I2C_Init(unsigned long clockFreq)
 {
     unsigned char   status      = 0;
-    unsigned long   pbFrequency = 80000000;
+    unsigned long   pbFrequency = 4000000;
     unsigned short  brgValue    = 0;
     
     // R_nW write_noTX; P stopbit_notdetected; S startbit_notdetected; BF RCinprocess_TXcomplete; SMP High Speed; UA dontupdate; CKE disabled; D_nA lastbyte_address; 
@@ -66,8 +66,8 @@ unsigned char I2C_Init(unsigned long clockFreq)
     // ACKTIM ackseq; SBCDE disabled; BOEN disabled; SCIE disabled; PCIE disabled; DHEN disabled; SDAHT 100ns; AHEN disabled; 
     SSP1CON3 = 0x00;
     // SSP1ADD 3;
-    brgValue = pbFrequency/(4*clockFreq) - 1;
-    SSP1ADD = brgValue;
+//    brgValue = pbFrequency/(4*clockFreq) - 1;
+//    SSP1ADD = brgValue;
     SSP1ADD = 0x03;
     
     // clear the interrupt flags

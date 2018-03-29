@@ -55,6 +55,21 @@ void interrupt INTERRUPT_InterruptManager (void)
     {
         TMR0_ISR();
     }
+    else if(INTCONbits.PEIE == 1)
+    {
+        if(PIE2bits.BCL1IE == 1 && PIR2bits.BCL1IF == 1)
+        {
+            I2C_BusCollisionISR();
+        } 
+        else if(PIE1bits.SSP1IE == 1 && PIR1bits.SSP1IF == 1)
+        {
+            I2C_ISR();
+        } 
+        else
+        {
+            //Unhandled Interrupt
+        }
+    }      
     else
     {
         //Unhandled Interrupt

@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=main.c interrupt_manager.c tmr0.c pin_manager.c mcc.c Communication.c ADXL345.c
+SOURCEFILES_QUOTED_IF_SPACED=../projectswithmick/CuriositywithADXL345Port/ADXL345.c ../projectswithmick/CuriositywithADXL345Port/Communication.c ../projectswithmick/CuriositywithADXL345Port/accel.c ../projectswithmick/CuriositywithADXL345Port/i2c.c ../projectswithmick/CuriositywithADXL345Port/interrupt_manager.c ../projectswithmick/CuriositywithADXL345Port/main.c ../projectswithmick/CuriositywithADXL345Port/mcc.c ../projectswithmick/CuriositywithADXL345Port/pin_manager.c ../projectswithmick/CuriositywithADXL345Port/tmr0.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/main.p1 ${OBJECTDIR}/interrupt_manager.p1 ${OBJECTDIR}/tmr0.p1 ${OBJECTDIR}/pin_manager.p1 ${OBJECTDIR}/mcc.p1 ${OBJECTDIR}/Communication.p1 ${OBJECTDIR}/ADXL345.p1
-POSSIBLE_DEPFILES=${OBJECTDIR}/main.p1.d ${OBJECTDIR}/interrupt_manager.p1.d ${OBJECTDIR}/tmr0.p1.d ${OBJECTDIR}/pin_manager.p1.d ${OBJECTDIR}/mcc.p1.d ${OBJECTDIR}/Communication.p1.d ${OBJECTDIR}/ADXL345.p1.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/_ext/1500567283/ADXL345.p1 ${OBJECTDIR}/_ext/1500567283/Communication.p1 ${OBJECTDIR}/_ext/1500567283/accel.p1 ${OBJECTDIR}/_ext/1500567283/i2c.p1 ${OBJECTDIR}/_ext/1500567283/interrupt_manager.p1 ${OBJECTDIR}/_ext/1500567283/main.p1 ${OBJECTDIR}/_ext/1500567283/mcc.p1 ${OBJECTDIR}/_ext/1500567283/pin_manager.p1 ${OBJECTDIR}/_ext/1500567283/tmr0.p1
+POSSIBLE_DEPFILES=${OBJECTDIR}/_ext/1500567283/ADXL345.p1.d ${OBJECTDIR}/_ext/1500567283/Communication.p1.d ${OBJECTDIR}/_ext/1500567283/accel.p1.d ${OBJECTDIR}/_ext/1500567283/i2c.p1.d ${OBJECTDIR}/_ext/1500567283/interrupt_manager.p1.d ${OBJECTDIR}/_ext/1500567283/main.p1.d ${OBJECTDIR}/_ext/1500567283/mcc.p1.d ${OBJECTDIR}/_ext/1500567283/pin_manager.p1.d ${OBJECTDIR}/_ext/1500567283/tmr0.p1.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/main.p1 ${OBJECTDIR}/interrupt_manager.p1 ${OBJECTDIR}/tmr0.p1 ${OBJECTDIR}/pin_manager.p1 ${OBJECTDIR}/mcc.p1 ${OBJECTDIR}/Communication.p1 ${OBJECTDIR}/ADXL345.p1
+OBJECTFILES=${OBJECTDIR}/_ext/1500567283/ADXL345.p1 ${OBJECTDIR}/_ext/1500567283/Communication.p1 ${OBJECTDIR}/_ext/1500567283/accel.p1 ${OBJECTDIR}/_ext/1500567283/i2c.p1 ${OBJECTDIR}/_ext/1500567283/interrupt_manager.p1 ${OBJECTDIR}/_ext/1500567283/main.p1 ${OBJECTDIR}/_ext/1500567283/mcc.p1 ${OBJECTDIR}/_ext/1500567283/pin_manager.p1 ${OBJECTDIR}/_ext/1500567283/tmr0.p1
 
 # Source Files
-SOURCEFILES=main.c interrupt_manager.c tmr0.c pin_manager.c mcc.c Communication.c ADXL345.c
+SOURCEFILES=../projectswithmick/CuriositywithADXL345Port/ADXL345.c ../projectswithmick/CuriositywithADXL345Port/Communication.c ../projectswithmick/CuriositywithADXL345Port/accel.c ../projectswithmick/CuriositywithADXL345Port/i2c.c ../projectswithmick/CuriositywithADXL345Port/interrupt_manager.c ../projectswithmick/CuriositywithADXL345Port/main.c ../projectswithmick/CuriositywithADXL345Port/mcc.c ../projectswithmick/CuriositywithADXL345Port/pin_manager.c ../projectswithmick/CuriositywithADXL345Port/tmr0.c
 
 
 CFLAGS=
@@ -93,118 +93,150 @@ MP_PROCESSOR_OPTION=16F1619
 # ------------------------------------------------------------------------------------
 # Rules for buildStep: compile
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
-${OBJECTDIR}/main.p1: main.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/main.p1.d 
-	@${RM} ${OBJECTDIR}/main.p1 
-	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  -D__DEBUG=1 --debugger=pickit3  --double=24 --float=24 --opt=+asm,+asmfile,-speed,+space,-debug,-local --addrqual=ignore --mode=free -P -N255 --warn=-3 --asmlist -DXPRJ_default=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-osccal,-resetbits,-download,-stackcall,+clib $(COMPARISON_BUILD)  --output=-mcof,+elf:multilocs --stack=compiled:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/main.p1  main.c 
-	@-${MV} ${OBJECTDIR}/main.d ${OBJECTDIR}/main.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/main.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+${OBJECTDIR}/_ext/1500567283/ADXL345.p1: ../projectswithmick/CuriositywithADXL345Port/ADXL345.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/1500567283" 
+	@${RM} ${OBJECTDIR}/_ext/1500567283/ADXL345.p1.d 
+	@${RM} ${OBJECTDIR}/_ext/1500567283/ADXL345.p1 
+	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  -D__DEBUG=1 --debugger=pickit3  --double=24 --float=24 --opt=+asm,+asmfile,-speed,+space,-debug,-local --addrqual=ignore --mode=free -P -N255 --warn=-3 --asmlist -DXPRJ_default=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-osccal,-resetbits,-download,-stackcall,+clib $(COMPARISON_BUILD)  --output=-mcof,+elf:multilocs --stack=compiled:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/_ext/1500567283/ADXL345.p1  ../projectswithmick/CuriositywithADXL345Port/ADXL345.c 
+	@-${MV} ${OBJECTDIR}/_ext/1500567283/ADXL345.d ${OBJECTDIR}/_ext/1500567283/ADXL345.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/_ext/1500567283/ADXL345.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/interrupt_manager.p1: interrupt_manager.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/interrupt_manager.p1.d 
-	@${RM} ${OBJECTDIR}/interrupt_manager.p1 
-	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  -D__DEBUG=1 --debugger=pickit3  --double=24 --float=24 --opt=+asm,+asmfile,-speed,+space,-debug,-local --addrqual=ignore --mode=free -P -N255 --warn=-3 --asmlist -DXPRJ_default=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-osccal,-resetbits,-download,-stackcall,+clib $(COMPARISON_BUILD)  --output=-mcof,+elf:multilocs --stack=compiled:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/interrupt_manager.p1  interrupt_manager.c 
-	@-${MV} ${OBJECTDIR}/interrupt_manager.d ${OBJECTDIR}/interrupt_manager.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/interrupt_manager.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+${OBJECTDIR}/_ext/1500567283/Communication.p1: ../projectswithmick/CuriositywithADXL345Port/Communication.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/1500567283" 
+	@${RM} ${OBJECTDIR}/_ext/1500567283/Communication.p1.d 
+	@${RM} ${OBJECTDIR}/_ext/1500567283/Communication.p1 
+	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  -D__DEBUG=1 --debugger=pickit3  --double=24 --float=24 --opt=+asm,+asmfile,-speed,+space,-debug,-local --addrqual=ignore --mode=free -P -N255 --warn=-3 --asmlist -DXPRJ_default=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-osccal,-resetbits,-download,-stackcall,+clib $(COMPARISON_BUILD)  --output=-mcof,+elf:multilocs --stack=compiled:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/_ext/1500567283/Communication.p1  ../projectswithmick/CuriositywithADXL345Port/Communication.c 
+	@-${MV} ${OBJECTDIR}/_ext/1500567283/Communication.d ${OBJECTDIR}/_ext/1500567283/Communication.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/_ext/1500567283/Communication.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/tmr0.p1: tmr0.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/tmr0.p1.d 
-	@${RM} ${OBJECTDIR}/tmr0.p1 
-	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  -D__DEBUG=1 --debugger=pickit3  --double=24 --float=24 --opt=+asm,+asmfile,-speed,+space,-debug,-local --addrqual=ignore --mode=free -P -N255 --warn=-3 --asmlist -DXPRJ_default=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-osccal,-resetbits,-download,-stackcall,+clib $(COMPARISON_BUILD)  --output=-mcof,+elf:multilocs --stack=compiled:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/tmr0.p1  tmr0.c 
-	@-${MV} ${OBJECTDIR}/tmr0.d ${OBJECTDIR}/tmr0.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/tmr0.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+${OBJECTDIR}/_ext/1500567283/accel.p1: ../projectswithmick/CuriositywithADXL345Port/accel.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/1500567283" 
+	@${RM} ${OBJECTDIR}/_ext/1500567283/accel.p1.d 
+	@${RM} ${OBJECTDIR}/_ext/1500567283/accel.p1 
+	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  -D__DEBUG=1 --debugger=pickit3  --double=24 --float=24 --opt=+asm,+asmfile,-speed,+space,-debug,-local --addrqual=ignore --mode=free -P -N255 --warn=-3 --asmlist -DXPRJ_default=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-osccal,-resetbits,-download,-stackcall,+clib $(COMPARISON_BUILD)  --output=-mcof,+elf:multilocs --stack=compiled:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/_ext/1500567283/accel.p1  ../projectswithmick/CuriositywithADXL345Port/accel.c 
+	@-${MV} ${OBJECTDIR}/_ext/1500567283/accel.d ${OBJECTDIR}/_ext/1500567283/accel.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/_ext/1500567283/accel.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/pin_manager.p1: pin_manager.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/pin_manager.p1.d 
-	@${RM} ${OBJECTDIR}/pin_manager.p1 
-	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  -D__DEBUG=1 --debugger=pickit3  --double=24 --float=24 --opt=+asm,+asmfile,-speed,+space,-debug,-local --addrqual=ignore --mode=free -P -N255 --warn=-3 --asmlist -DXPRJ_default=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-osccal,-resetbits,-download,-stackcall,+clib $(COMPARISON_BUILD)  --output=-mcof,+elf:multilocs --stack=compiled:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/pin_manager.p1  pin_manager.c 
-	@-${MV} ${OBJECTDIR}/pin_manager.d ${OBJECTDIR}/pin_manager.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/pin_manager.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+${OBJECTDIR}/_ext/1500567283/i2c.p1: ../projectswithmick/CuriositywithADXL345Port/i2c.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/1500567283" 
+	@${RM} ${OBJECTDIR}/_ext/1500567283/i2c.p1.d 
+	@${RM} ${OBJECTDIR}/_ext/1500567283/i2c.p1 
+	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  -D__DEBUG=1 --debugger=pickit3  --double=24 --float=24 --opt=+asm,+asmfile,-speed,+space,-debug,-local --addrqual=ignore --mode=free -P -N255 --warn=-3 --asmlist -DXPRJ_default=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-osccal,-resetbits,-download,-stackcall,+clib $(COMPARISON_BUILD)  --output=-mcof,+elf:multilocs --stack=compiled:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/_ext/1500567283/i2c.p1  ../projectswithmick/CuriositywithADXL345Port/i2c.c 
+	@-${MV} ${OBJECTDIR}/_ext/1500567283/i2c.d ${OBJECTDIR}/_ext/1500567283/i2c.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/_ext/1500567283/i2c.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/mcc.p1: mcc.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/mcc.p1.d 
-	@${RM} ${OBJECTDIR}/mcc.p1 
-	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  -D__DEBUG=1 --debugger=pickit3  --double=24 --float=24 --opt=+asm,+asmfile,-speed,+space,-debug,-local --addrqual=ignore --mode=free -P -N255 --warn=-3 --asmlist -DXPRJ_default=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-osccal,-resetbits,-download,-stackcall,+clib $(COMPARISON_BUILD)  --output=-mcof,+elf:multilocs --stack=compiled:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/mcc.p1  mcc.c 
-	@-${MV} ${OBJECTDIR}/mcc.d ${OBJECTDIR}/mcc.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/mcc.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+${OBJECTDIR}/_ext/1500567283/interrupt_manager.p1: ../projectswithmick/CuriositywithADXL345Port/interrupt_manager.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/1500567283" 
+	@${RM} ${OBJECTDIR}/_ext/1500567283/interrupt_manager.p1.d 
+	@${RM} ${OBJECTDIR}/_ext/1500567283/interrupt_manager.p1 
+	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  -D__DEBUG=1 --debugger=pickit3  --double=24 --float=24 --opt=+asm,+asmfile,-speed,+space,-debug,-local --addrqual=ignore --mode=free -P -N255 --warn=-3 --asmlist -DXPRJ_default=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-osccal,-resetbits,-download,-stackcall,+clib $(COMPARISON_BUILD)  --output=-mcof,+elf:multilocs --stack=compiled:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/_ext/1500567283/interrupt_manager.p1  ../projectswithmick/CuriositywithADXL345Port/interrupt_manager.c 
+	@-${MV} ${OBJECTDIR}/_ext/1500567283/interrupt_manager.d ${OBJECTDIR}/_ext/1500567283/interrupt_manager.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/_ext/1500567283/interrupt_manager.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/Communication.p1: Communication.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/Communication.p1.d 
-	@${RM} ${OBJECTDIR}/Communication.p1 
-	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  -D__DEBUG=1 --debugger=pickit3  --double=24 --float=24 --opt=+asm,+asmfile,-speed,+space,-debug,-local --addrqual=ignore --mode=free -P -N255 --warn=-3 --asmlist -DXPRJ_default=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-osccal,-resetbits,-download,-stackcall,+clib $(COMPARISON_BUILD)  --output=-mcof,+elf:multilocs --stack=compiled:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/Communication.p1  Communication.c 
-	@-${MV} ${OBJECTDIR}/Communication.d ${OBJECTDIR}/Communication.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/Communication.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+${OBJECTDIR}/_ext/1500567283/main.p1: ../projectswithmick/CuriositywithADXL345Port/main.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/1500567283" 
+	@${RM} ${OBJECTDIR}/_ext/1500567283/main.p1.d 
+	@${RM} ${OBJECTDIR}/_ext/1500567283/main.p1 
+	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  -D__DEBUG=1 --debugger=pickit3  --double=24 --float=24 --opt=+asm,+asmfile,-speed,+space,-debug,-local --addrqual=ignore --mode=free -P -N255 --warn=-3 --asmlist -DXPRJ_default=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-osccal,-resetbits,-download,-stackcall,+clib $(COMPARISON_BUILD)  --output=-mcof,+elf:multilocs --stack=compiled:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/_ext/1500567283/main.p1  ../projectswithmick/CuriositywithADXL345Port/main.c 
+	@-${MV} ${OBJECTDIR}/_ext/1500567283/main.d ${OBJECTDIR}/_ext/1500567283/main.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/_ext/1500567283/main.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/ADXL345.p1: ADXL345.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/ADXL345.p1.d 
-	@${RM} ${OBJECTDIR}/ADXL345.p1 
-	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  -D__DEBUG=1 --debugger=pickit3  --double=24 --float=24 --opt=+asm,+asmfile,-speed,+space,-debug,-local --addrqual=ignore --mode=free -P -N255 --warn=-3 --asmlist -DXPRJ_default=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-osccal,-resetbits,-download,-stackcall,+clib $(COMPARISON_BUILD)  --output=-mcof,+elf:multilocs --stack=compiled:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/ADXL345.p1  ADXL345.c 
-	@-${MV} ${OBJECTDIR}/ADXL345.d ${OBJECTDIR}/ADXL345.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/ADXL345.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+${OBJECTDIR}/_ext/1500567283/mcc.p1: ../projectswithmick/CuriositywithADXL345Port/mcc.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/1500567283" 
+	@${RM} ${OBJECTDIR}/_ext/1500567283/mcc.p1.d 
+	@${RM} ${OBJECTDIR}/_ext/1500567283/mcc.p1 
+	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  -D__DEBUG=1 --debugger=pickit3  --double=24 --float=24 --opt=+asm,+asmfile,-speed,+space,-debug,-local --addrqual=ignore --mode=free -P -N255 --warn=-3 --asmlist -DXPRJ_default=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-osccal,-resetbits,-download,-stackcall,+clib $(COMPARISON_BUILD)  --output=-mcof,+elf:multilocs --stack=compiled:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/_ext/1500567283/mcc.p1  ../projectswithmick/CuriositywithADXL345Port/mcc.c 
+	@-${MV} ${OBJECTDIR}/_ext/1500567283/mcc.d ${OBJECTDIR}/_ext/1500567283/mcc.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/_ext/1500567283/mcc.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/_ext/1500567283/pin_manager.p1: ../projectswithmick/CuriositywithADXL345Port/pin_manager.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/1500567283" 
+	@${RM} ${OBJECTDIR}/_ext/1500567283/pin_manager.p1.d 
+	@${RM} ${OBJECTDIR}/_ext/1500567283/pin_manager.p1 
+	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  -D__DEBUG=1 --debugger=pickit3  --double=24 --float=24 --opt=+asm,+asmfile,-speed,+space,-debug,-local --addrqual=ignore --mode=free -P -N255 --warn=-3 --asmlist -DXPRJ_default=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-osccal,-resetbits,-download,-stackcall,+clib $(COMPARISON_BUILD)  --output=-mcof,+elf:multilocs --stack=compiled:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/_ext/1500567283/pin_manager.p1  ../projectswithmick/CuriositywithADXL345Port/pin_manager.c 
+	@-${MV} ${OBJECTDIR}/_ext/1500567283/pin_manager.d ${OBJECTDIR}/_ext/1500567283/pin_manager.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/_ext/1500567283/pin_manager.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/_ext/1500567283/tmr0.p1: ../projectswithmick/CuriositywithADXL345Port/tmr0.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/1500567283" 
+	@${RM} ${OBJECTDIR}/_ext/1500567283/tmr0.p1.d 
+	@${RM} ${OBJECTDIR}/_ext/1500567283/tmr0.p1 
+	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  -D__DEBUG=1 --debugger=pickit3  --double=24 --float=24 --opt=+asm,+asmfile,-speed,+space,-debug,-local --addrqual=ignore --mode=free -P -N255 --warn=-3 --asmlist -DXPRJ_default=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-osccal,-resetbits,-download,-stackcall,+clib $(COMPARISON_BUILD)  --output=-mcof,+elf:multilocs --stack=compiled:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/_ext/1500567283/tmr0.p1  ../projectswithmick/CuriositywithADXL345Port/tmr0.c 
+	@-${MV} ${OBJECTDIR}/_ext/1500567283/tmr0.d ${OBJECTDIR}/_ext/1500567283/tmr0.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/_ext/1500567283/tmr0.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 else
-${OBJECTDIR}/main.p1: main.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/main.p1.d 
-	@${RM} ${OBJECTDIR}/main.p1 
-	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  --double=24 --float=24 --opt=+asm,+asmfile,-speed,+space,-debug,-local --addrqual=ignore --mode=free -P -N255 --warn=-3 --asmlist -DXPRJ_default=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-osccal,-resetbits,-download,-stackcall,+clib $(COMPARISON_BUILD)  --output=-mcof,+elf:multilocs --stack=compiled:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/main.p1  main.c 
-	@-${MV} ${OBJECTDIR}/main.d ${OBJECTDIR}/main.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/main.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+${OBJECTDIR}/_ext/1500567283/ADXL345.p1: ../projectswithmick/CuriositywithADXL345Port/ADXL345.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/1500567283" 
+	@${RM} ${OBJECTDIR}/_ext/1500567283/ADXL345.p1.d 
+	@${RM} ${OBJECTDIR}/_ext/1500567283/ADXL345.p1 
+	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  --double=24 --float=24 --opt=+asm,+asmfile,-speed,+space,-debug,-local --addrqual=ignore --mode=free -P -N255 --warn=-3 --asmlist -DXPRJ_default=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-osccal,-resetbits,-download,-stackcall,+clib $(COMPARISON_BUILD)  --output=-mcof,+elf:multilocs --stack=compiled:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/_ext/1500567283/ADXL345.p1  ../projectswithmick/CuriositywithADXL345Port/ADXL345.c 
+	@-${MV} ${OBJECTDIR}/_ext/1500567283/ADXL345.d ${OBJECTDIR}/_ext/1500567283/ADXL345.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/_ext/1500567283/ADXL345.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/interrupt_manager.p1: interrupt_manager.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/interrupt_manager.p1.d 
-	@${RM} ${OBJECTDIR}/interrupt_manager.p1 
-	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  --double=24 --float=24 --opt=+asm,+asmfile,-speed,+space,-debug,-local --addrqual=ignore --mode=free -P -N255 --warn=-3 --asmlist -DXPRJ_default=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-osccal,-resetbits,-download,-stackcall,+clib $(COMPARISON_BUILD)  --output=-mcof,+elf:multilocs --stack=compiled:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/interrupt_manager.p1  interrupt_manager.c 
-	@-${MV} ${OBJECTDIR}/interrupt_manager.d ${OBJECTDIR}/interrupt_manager.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/interrupt_manager.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+${OBJECTDIR}/_ext/1500567283/Communication.p1: ../projectswithmick/CuriositywithADXL345Port/Communication.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/1500567283" 
+	@${RM} ${OBJECTDIR}/_ext/1500567283/Communication.p1.d 
+	@${RM} ${OBJECTDIR}/_ext/1500567283/Communication.p1 
+	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  --double=24 --float=24 --opt=+asm,+asmfile,-speed,+space,-debug,-local --addrqual=ignore --mode=free -P -N255 --warn=-3 --asmlist -DXPRJ_default=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-osccal,-resetbits,-download,-stackcall,+clib $(COMPARISON_BUILD)  --output=-mcof,+elf:multilocs --stack=compiled:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/_ext/1500567283/Communication.p1  ../projectswithmick/CuriositywithADXL345Port/Communication.c 
+	@-${MV} ${OBJECTDIR}/_ext/1500567283/Communication.d ${OBJECTDIR}/_ext/1500567283/Communication.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/_ext/1500567283/Communication.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/tmr0.p1: tmr0.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/tmr0.p1.d 
-	@${RM} ${OBJECTDIR}/tmr0.p1 
-	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  --double=24 --float=24 --opt=+asm,+asmfile,-speed,+space,-debug,-local --addrqual=ignore --mode=free -P -N255 --warn=-3 --asmlist -DXPRJ_default=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-osccal,-resetbits,-download,-stackcall,+clib $(COMPARISON_BUILD)  --output=-mcof,+elf:multilocs --stack=compiled:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/tmr0.p1  tmr0.c 
-	@-${MV} ${OBJECTDIR}/tmr0.d ${OBJECTDIR}/tmr0.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/tmr0.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+${OBJECTDIR}/_ext/1500567283/accel.p1: ../projectswithmick/CuriositywithADXL345Port/accel.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/1500567283" 
+	@${RM} ${OBJECTDIR}/_ext/1500567283/accel.p1.d 
+	@${RM} ${OBJECTDIR}/_ext/1500567283/accel.p1 
+	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  --double=24 --float=24 --opt=+asm,+asmfile,-speed,+space,-debug,-local --addrqual=ignore --mode=free -P -N255 --warn=-3 --asmlist -DXPRJ_default=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-osccal,-resetbits,-download,-stackcall,+clib $(COMPARISON_BUILD)  --output=-mcof,+elf:multilocs --stack=compiled:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/_ext/1500567283/accel.p1  ../projectswithmick/CuriositywithADXL345Port/accel.c 
+	@-${MV} ${OBJECTDIR}/_ext/1500567283/accel.d ${OBJECTDIR}/_ext/1500567283/accel.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/_ext/1500567283/accel.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/pin_manager.p1: pin_manager.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/pin_manager.p1.d 
-	@${RM} ${OBJECTDIR}/pin_manager.p1 
-	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  --double=24 --float=24 --opt=+asm,+asmfile,-speed,+space,-debug,-local --addrqual=ignore --mode=free -P -N255 --warn=-3 --asmlist -DXPRJ_default=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-osccal,-resetbits,-download,-stackcall,+clib $(COMPARISON_BUILD)  --output=-mcof,+elf:multilocs --stack=compiled:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/pin_manager.p1  pin_manager.c 
-	@-${MV} ${OBJECTDIR}/pin_manager.d ${OBJECTDIR}/pin_manager.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/pin_manager.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+${OBJECTDIR}/_ext/1500567283/i2c.p1: ../projectswithmick/CuriositywithADXL345Port/i2c.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/1500567283" 
+	@${RM} ${OBJECTDIR}/_ext/1500567283/i2c.p1.d 
+	@${RM} ${OBJECTDIR}/_ext/1500567283/i2c.p1 
+	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  --double=24 --float=24 --opt=+asm,+asmfile,-speed,+space,-debug,-local --addrqual=ignore --mode=free -P -N255 --warn=-3 --asmlist -DXPRJ_default=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-osccal,-resetbits,-download,-stackcall,+clib $(COMPARISON_BUILD)  --output=-mcof,+elf:multilocs --stack=compiled:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/_ext/1500567283/i2c.p1  ../projectswithmick/CuriositywithADXL345Port/i2c.c 
+	@-${MV} ${OBJECTDIR}/_ext/1500567283/i2c.d ${OBJECTDIR}/_ext/1500567283/i2c.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/_ext/1500567283/i2c.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/mcc.p1: mcc.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/mcc.p1.d 
-	@${RM} ${OBJECTDIR}/mcc.p1 
-	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  --double=24 --float=24 --opt=+asm,+asmfile,-speed,+space,-debug,-local --addrqual=ignore --mode=free -P -N255 --warn=-3 --asmlist -DXPRJ_default=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-osccal,-resetbits,-download,-stackcall,+clib $(COMPARISON_BUILD)  --output=-mcof,+elf:multilocs --stack=compiled:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/mcc.p1  mcc.c 
-	@-${MV} ${OBJECTDIR}/mcc.d ${OBJECTDIR}/mcc.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/mcc.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+${OBJECTDIR}/_ext/1500567283/interrupt_manager.p1: ../projectswithmick/CuriositywithADXL345Port/interrupt_manager.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/1500567283" 
+	@${RM} ${OBJECTDIR}/_ext/1500567283/interrupt_manager.p1.d 
+	@${RM} ${OBJECTDIR}/_ext/1500567283/interrupt_manager.p1 
+	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  --double=24 --float=24 --opt=+asm,+asmfile,-speed,+space,-debug,-local --addrqual=ignore --mode=free -P -N255 --warn=-3 --asmlist -DXPRJ_default=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-osccal,-resetbits,-download,-stackcall,+clib $(COMPARISON_BUILD)  --output=-mcof,+elf:multilocs --stack=compiled:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/_ext/1500567283/interrupt_manager.p1  ../projectswithmick/CuriositywithADXL345Port/interrupt_manager.c 
+	@-${MV} ${OBJECTDIR}/_ext/1500567283/interrupt_manager.d ${OBJECTDIR}/_ext/1500567283/interrupt_manager.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/_ext/1500567283/interrupt_manager.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/Communication.p1: Communication.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/Communication.p1.d 
-	@${RM} ${OBJECTDIR}/Communication.p1 
-	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  --double=24 --float=24 --opt=+asm,+asmfile,-speed,+space,-debug,-local --addrqual=ignore --mode=free -P -N255 --warn=-3 --asmlist -DXPRJ_default=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-osccal,-resetbits,-download,-stackcall,+clib $(COMPARISON_BUILD)  --output=-mcof,+elf:multilocs --stack=compiled:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/Communication.p1  Communication.c 
-	@-${MV} ${OBJECTDIR}/Communication.d ${OBJECTDIR}/Communication.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/Communication.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+${OBJECTDIR}/_ext/1500567283/main.p1: ../projectswithmick/CuriositywithADXL345Port/main.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/1500567283" 
+	@${RM} ${OBJECTDIR}/_ext/1500567283/main.p1.d 
+	@${RM} ${OBJECTDIR}/_ext/1500567283/main.p1 
+	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  --double=24 --float=24 --opt=+asm,+asmfile,-speed,+space,-debug,-local --addrqual=ignore --mode=free -P -N255 --warn=-3 --asmlist -DXPRJ_default=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-osccal,-resetbits,-download,-stackcall,+clib $(COMPARISON_BUILD)  --output=-mcof,+elf:multilocs --stack=compiled:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/_ext/1500567283/main.p1  ../projectswithmick/CuriositywithADXL345Port/main.c 
+	@-${MV} ${OBJECTDIR}/_ext/1500567283/main.d ${OBJECTDIR}/_ext/1500567283/main.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/_ext/1500567283/main.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/ADXL345.p1: ADXL345.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/ADXL345.p1.d 
-	@${RM} ${OBJECTDIR}/ADXL345.p1 
-	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  --double=24 --float=24 --opt=+asm,+asmfile,-speed,+space,-debug,-local --addrqual=ignore --mode=free -P -N255 --warn=-3 --asmlist -DXPRJ_default=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-osccal,-resetbits,-download,-stackcall,+clib $(COMPARISON_BUILD)  --output=-mcof,+elf:multilocs --stack=compiled:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/ADXL345.p1  ADXL345.c 
-	@-${MV} ${OBJECTDIR}/ADXL345.d ${OBJECTDIR}/ADXL345.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/ADXL345.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+${OBJECTDIR}/_ext/1500567283/mcc.p1: ../projectswithmick/CuriositywithADXL345Port/mcc.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/1500567283" 
+	@${RM} ${OBJECTDIR}/_ext/1500567283/mcc.p1.d 
+	@${RM} ${OBJECTDIR}/_ext/1500567283/mcc.p1 
+	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  --double=24 --float=24 --opt=+asm,+asmfile,-speed,+space,-debug,-local --addrqual=ignore --mode=free -P -N255 --warn=-3 --asmlist -DXPRJ_default=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-osccal,-resetbits,-download,-stackcall,+clib $(COMPARISON_BUILD)  --output=-mcof,+elf:multilocs --stack=compiled:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/_ext/1500567283/mcc.p1  ../projectswithmick/CuriositywithADXL345Port/mcc.c 
+	@-${MV} ${OBJECTDIR}/_ext/1500567283/mcc.d ${OBJECTDIR}/_ext/1500567283/mcc.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/_ext/1500567283/mcc.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/_ext/1500567283/pin_manager.p1: ../projectswithmick/CuriositywithADXL345Port/pin_manager.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/1500567283" 
+	@${RM} ${OBJECTDIR}/_ext/1500567283/pin_manager.p1.d 
+	@${RM} ${OBJECTDIR}/_ext/1500567283/pin_manager.p1 
+	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  --double=24 --float=24 --opt=+asm,+asmfile,-speed,+space,-debug,-local --addrqual=ignore --mode=free -P -N255 --warn=-3 --asmlist -DXPRJ_default=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-osccal,-resetbits,-download,-stackcall,+clib $(COMPARISON_BUILD)  --output=-mcof,+elf:multilocs --stack=compiled:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/_ext/1500567283/pin_manager.p1  ../projectswithmick/CuriositywithADXL345Port/pin_manager.c 
+	@-${MV} ${OBJECTDIR}/_ext/1500567283/pin_manager.d ${OBJECTDIR}/_ext/1500567283/pin_manager.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/_ext/1500567283/pin_manager.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/_ext/1500567283/tmr0.p1: ../projectswithmick/CuriositywithADXL345Port/tmr0.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/1500567283" 
+	@${RM} ${OBJECTDIR}/_ext/1500567283/tmr0.p1.d 
+	@${RM} ${OBJECTDIR}/_ext/1500567283/tmr0.p1 
+	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  --double=24 --float=24 --opt=+asm,+asmfile,-speed,+space,-debug,-local --addrqual=ignore --mode=free -P -N255 --warn=-3 --asmlist -DXPRJ_default=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-osccal,-resetbits,-download,-stackcall,+clib $(COMPARISON_BUILD)  --output=-mcof,+elf:multilocs --stack=compiled:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/_ext/1500567283/tmr0.p1  ../projectswithmick/CuriositywithADXL345Port/tmr0.c 
+	@-${MV} ${OBJECTDIR}/_ext/1500567283/tmr0.d ${OBJECTDIR}/_ext/1500567283/tmr0.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/_ext/1500567283/tmr0.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 endif
 

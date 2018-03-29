@@ -59,18 +59,6 @@
 #define PULL_UP_ENABLED      1
 #define PULL_UP_DISABLED     0
 
-// get/set RA2 procedures
-#define RA2_SetHigh()    do { LATAbits.LATA2 = 1; } while(0)
-#define RA2_SetLow()   do { LATAbits.LATA2 = 0; } while(0)
-#define RA2_Toggle()   do { LATAbits.LATA2 = ~LATAbits.LATA2; } while(0)
-#define RA2_GetValue()         PORTAbits.RA2
-#define RA2_SetDigitalInput()   do { TRISAbits.TRISA2 = 1; } while(0)
-#define RA2_SetDigitalOutput()  do { TRISAbits.TRISA2 = 0; } while(0)
-#define RA2_SetPullup()     do { WPUAbits.WPUA2 = 1; } while(0)
-#define RA2_ResetPullup()   do { WPUAbits.WPUA2 = 0; } while(0)
-#define RA2_SetAnalogMode() do { ANSELAbits.ANSA2 = 1; } while(0)
-#define RA2_SetDigitalMode()do { ANSELAbits.ANSA2 = 0; } while(0)
-
 // get/set SDA aliases
 #define SDA_TRIS               TRISBbits.TRISB4
 #define SDA_LAT                LATBbits.LATB4
@@ -147,7 +135,6 @@
 #define CS_SetOpenDrain()   do { ODCONCbits.ODC6 = 1; } while(0)
 #define CS_SetAnalogMode()  do { ANSELCbits.ANSC6 = 1; } while(0)
 #define CS_SetDigitalMode() do { ANSELCbits.ANSC6 = 0; } while(0)
-
 
 /**
    @Param

@@ -4,12 +4,6 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
-      <itemPath>interrupt_manager.h</itemPath>
-      <itemPath>tmr0.h</itemPath>
-      <itemPath>mcc.h</itemPath>
-      <itemPath>pin_manager.h</itemPath>
-      <itemPath>ADXL345.h</itemPath>
-      <itemPath>Communication.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -18,13 +12,6 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
-      <itemPath>main.c</itemPath>
-      <itemPath>interrupt_manager.c</itemPath>
-      <itemPath>tmr0.c</itemPath>
-      <itemPath>pin_manager.c</itemPath>
-      <itemPath>mcc.c</itemPath>
-      <itemPath>Communication.c</itemPath>
-      <itemPath>ADXL345.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -32,9 +19,27 @@
       <itemPath>Makefile</itemPath>
       <itemPath>MyConfig.mc3</itemPath>
     </logicalFolder>
+    <itemPath>../projectswithmick/CuriositywithADXL345Port/ADXL345.c</itemPath>
+    <itemPath>../projectswithmick/CuriositywithADXL345Port/ADXL345.h</itemPath>
+    <itemPath>../projectswithmick/CuriositywithADXL345Port/Communication.c</itemPath>
+    <itemPath>../projectswithmick/CuriositywithADXL345Port/Communication.h</itemPath>
+    <itemPath>../projectswithmick/CuriositywithADXL345Port/accel.c</itemPath>
+    <itemPath>../projectswithmick/CuriositywithADXL345Port/accel.h</itemPath>
+    <itemPath>../projectswithmick/CuriositywithADXL345Port/i2c.c</itemPath>
+    <itemPath>../projectswithmick/CuriositywithADXL345Port/i2c.h</itemPath>
+    <itemPath>../projectswithmick/CuriositywithADXL345Port/interrupt_manager.c</itemPath>
+    <itemPath>../projectswithmick/CuriositywithADXL345Port/interrupt_manager.h</itemPath>
+    <itemPath>../projectswithmick/CuriositywithADXL345Port/main.c</itemPath>
+    <itemPath>../projectswithmick/CuriositywithADXL345Port/mcc.c</itemPath>
+    <itemPath>../projectswithmick/CuriositywithADXL345Port/mcc.h</itemPath>
+    <itemPath>../projectswithmick/CuriositywithADXL345Port/pin_manager.c</itemPath>
+    <itemPath>../projectswithmick/CuriositywithADXL345Port/pin_manager.h</itemPath>
+    <itemPath>../projectswithmick/CuriositywithADXL345Port/tmr0.c</itemPath>
+    <itemPath>../projectswithmick/CuriositywithADXL345Port/tmr0.h</itemPath>
   </logicalFolder>
   <sourceRootList>
     <Elem>.</Elem>
+    <Elem>../projectswithmick/CuriositywithADXL345Port</Elem>
   </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
@@ -141,6 +146,9 @@
         <property key="opt-xc8-linker-serial" value=""/>
         <property key="program-the-device-with-default-config-words" value="true"/>
       </HI-TECH-LINK>
+      <PKOBSKDEPlatformTool>
+        <property key="firmware.download.all" value="false"/>
+      </PKOBSKDEPlatformTool>
       <XC8-config-global>
         <property key="advanced-elf" value="true"/>
         <property key="output-file-format" value="-mcof,+elf"/>
