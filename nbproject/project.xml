@@ -3,8 +3,8 @@
     <type>com.microchip.mplab.nbide.embedded.makeproject</type>
     <configuration>
         <data xmlns="http://www.netbeans.org/ns/make-project/1">
-            <name>CuriosityWithADXL345</name>
-            <creation-uuid>646c4b69-702f-43ef-ab52-ad0443361a83</creation-uuid>
+            <name>CuriositywithADXL345Port</name>
+            <creation-uuid>2b34754d-3cdd-435f-b244-e6bb5d874aba</creation-uuid>
             <make-project-type>0</make-project-type>
             <c-extensions>c</c-extensions>
             <cpp-extensions/>

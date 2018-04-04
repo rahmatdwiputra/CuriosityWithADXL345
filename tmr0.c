@@ -50,6 +50,8 @@
 #include <xc.h>
 #include "tmr0.h"
 #include "pin_manager.h"
+#include "Communication.h"
+#include "ADXL345.h"
 /**
   Section: Global Variables Definitions
 */
@@ -67,11 +69,17 @@ void TMR0_Initialize(void)
     // PSA assigned; PS 1:8; TMRSE Increment_hi_lo; mask the nWPUEN and INTEDG bits
     OPTION_REG = (uint8_t)((OPTION_REG & 0xC0) | 0xD2 & 0x3F); 
 	
-    // TMR0 6; 
-    TMR0 = 0x06;
+//    // TMR0 6; 
+//    TMR0 = 0x06;
+//	
+//    // Load the TMR value to reload variable
+//    timer0ReloadVal= 6;
+    
+    // TMR0 131; 
+    TMR0 = 0x83;
 	
     // Load the TMR value to reload variable
-    timer0ReloadVal= 6;
+    timer0ReloadVal= 131;
 
     // Clear Interrupt flag before enabling the interrupt
     INTCONbits.TMR0IF = 0;
@@ -123,13 +131,15 @@ void TMR0_ISR(void)
         CountCallBack = 0;
     }
     LED_D7_Toggle();
+    //DeviceID = ADXL345_GetRegisterValue(0x00);
     // add your TMR0 interrupt custom code
 }
 
 void TMR0_CallBack(void)
 {
     // Add your custom callback code here
-
+    unsigned char DeviceID;
+    DeviceID = ADXL345_GetRegisterValue(0x00);
     if(TMR0_InterruptHandler)
     {
         TMR0_InterruptHandler();

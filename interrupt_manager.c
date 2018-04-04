@@ -63,7 +63,8 @@ void interrupt INTERRUPT_InterruptManager (void)
         } 
         else if(PIE1bits.SSP1IE == 1 && PIR1bits.SSP1IF == 1)
         {
-            I2C_ISR();
+            PIR1bits.SSP1IF = 0;
+            //I2C_ISR();
         } 
         else
         {

@@ -43,6 +43,7 @@
 /******************************************************************************/
 #include <xc.h>
 #include "Communication.h"
+#include "pin_manager.h"
 
 /***************************************************************************//**
  * @brief Initializes the I2C communication peripheral.
@@ -78,6 +79,7 @@ unsigned char I2C_Init(unsigned long clockFreq)
     PIE1bits.SSP1IE = 1;
     PIE2bits.BCL1IE = 1;
     
+    CS_SetHigh();
     status = 1;
     
     return status;
@@ -104,13 +106,14 @@ unsigned char I2C_Write(unsigned char slaveAddress,
     unsigned char acknowledge = 0;
     unsigned char byte = 0;
     
+    
    SSP1CON2bits.SEN = 1;        //initiate start condition
    while(SSP1CON2bits.SEN);     //Wait for the start condition to complete
    PIR1bits.SSP1IF = 0;         //clear SSP interrupt flag
    
    SSP1BUF = slaveAddress << 1;          //Send the slave address and R/W bit
    while(!PIR1bits.SSP1IF);     //wait for ACK. SSPIF is set every 9th clock cycle
-   PIR1bits.SSP1IF = 0;          //Clear SSP Interrupt Flag
+   PIR1bits.SSP1IF = 0;          //Clear SSP Interrupt Flag  
    acknowledge = SSP1CON2bits.ACKSTAT;
    if (acknowledge == 0)
    {
@@ -124,7 +127,7 @@ unsigned char I2C_Write(unsigned char slaveAddress,
    else
    {
        status = 0xFF;           //exit Read (NACK)
-   }
+   }     
    if(stopBit)
    {
        SSP1CON2bits.PEN = 1;    //initiate Stop condition
@@ -155,11 +158,11 @@ unsigned char I2C_Read(unsigned char slaveAddress,
     unsigned char acknowledge = 0;
     unsigned char byte = 0;
     
-   SSP1CON2bits.SEN = 1;        //initiate start condition
-   while(SSP1CON2bits.SEN);     //Wait for the start condition to complete
+   SSP1CON2bits.RSEN = 1;        //initiate restart condition
+   while(SSP1CON2bits.RSEN);     //Wait for the restart condition to complete
    PIR1bits.SSP1IF = 0;         //clear SSP interrupt flag
    
-   SSP1BUF = slaveAddress << 1;          //Send the slave address and R/W bit
+   SSP1BUF = (slaveAddress << 1) + 1;          //Send the slave address and R/W bit
    while(!PIR1bits.SSP1IF);     //wait for ACK. SSPIF is set every 9th clock cycle
    PIR1bits.SSP1IF = 0;          //Clear SSP Interrupt Flag
    acknowledge = SSP1CON2bits.ACKSTAT;
@@ -220,7 +223,29 @@ unsigned char SPI_Init(unsigned char lsbFirst,
                        unsigned char clockPol,
                        unsigned char clockEdg)
 {
-    /* Add your code here. */
+    unsigned char   status      = 0;
+    unsigned long   pbFrequency = 40000000;
+    unsigned short  brgValue    = 0;
+    
+    CS_SetHigh();
+    
+    // Set the SPI module to the options selected in the User Interface
+    
+    // R_nW write_noTX; P stopbit_notdetected; S startbit_notdetected; BF RCinprocess_TXcomplete; SMP Middle; UA dontupdate; CKE Idle to Active; D_nA lastbyte_address; 
+    SSP1STAT = 0x00;
+    SSP1STATbits.CKE = clockEdg;
+    
+    // SSPEN enabled; WCOL no_collision; CKP Idle:Low, Active:High; SSPM FOSC/4; SSPOV no_overflow; 
+    SSP1CON1 = 0x20;
+    SSP1CON1bits.CKP = clockPol;
+    
+    // SSP1ADD 0;
+//    brgValue = pbFrequency / (4 * clockFreq) - 1;
+//    SSP1ADD = brgValue;
+    SSP1ADD = 0x00;
+    
+    status = 1;
+    return status;
 }
 
 /***************************************************************************//**
@@ -237,7 +262,33 @@ unsigned char SPI_Read(unsigned char slaveDeviceId,
                        unsigned char* data,
                        unsigned char bytesNumber)
 {
-    /* Add your code here. */
+    unsigned char   byte            = 0;
+    unsigned char   writeBuffer[4]  = {0, 0, 0, 0};
+    
+    
+    SSP1CON1bits.WCOL = 0;  // Clear the Write Collision flag, to allow writing
+    
+    for(byte = 0; byte < bytesNumber; byte++)
+    {
+        writeBuffer[byte] = data[byte];
+    }
+    if(slaveDeviceId == 1)
+    {
+        CS_SetLow();
+    }
+    for(byte = 0; byte < bytesNumber; byte++)
+    {
+        SSP1BUF = writeBuffer[byte];
+        while(SSP1STATbits.BF == 0);
+        data[byte] = SSP1BUF;
+    }
+//    while(SPI2STATbits.SPIBUSY == 1);
+    if(slaveDeviceId == 1)
+    {
+        CS_SetHigh();
+    }
+
+    return bytesNumber;
 }
 
 /***************************************************************************//**
@@ -253,5 +304,24 @@ unsigned char SPI_Write(unsigned char slaveDeviceId,
                         unsigned char* data,
                         unsigned char bytesNumber)
 {
-    /* Add your code here. */
+    unsigned char byte     = 0;
+    unsigned char tempByte = 0;
+
+    if(slaveDeviceId == 1)
+    {
+        CS_SetLow();
+    }
+    for(byte = 0; byte < bytesNumber; byte++)
+    {
+        SSP1BUF = data[byte];
+        while(SSP1STATbits.BF == 0);
+        tempByte = SSP1BUF;
+    }
+//    while(SPI2STATbits.SPIBUSY == 1);
+    if(slaveDeviceId == 1)
+    {
+        CS_SetHigh();
+    }
+
+    return bytesNumber;
 }

@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=CuriosityWithADXL345
+PROJECTNAME=CuriositywithADXL345Port
 
 # Active Configuration
 DEFAULTCONF=default

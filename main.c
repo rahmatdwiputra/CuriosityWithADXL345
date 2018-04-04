@@ -75,10 +75,10 @@ void main(void)
     // Use the following macros to:
 
     // Enable the Global Interrupts
-//    INTERRUPT_GlobalInterruptEnable();
+    INTERRUPT_GlobalInterruptEnable();
 
     // Enable the Peripheral Interrupts
-//    INTERRUPT_PeripheralInterruptEnable();
+    INTERRUPT_PeripheralInterruptEnable();
 
     // Disable the Global Interrupts
     //INTERRUPT_GlobalInterruptDisable();
@@ -95,9 +95,9 @@ void main(void)
 //        LED_D4_SetHigh();
 //        LED_D7_SetLow();
 //        __delay_ms(500);
-//        DeviceID = ADXL345_GetRegisterValue(0x00);
-        AccelStatus = AccelReadStatus(0x1D,0x00);
-        __delay_ms(5);
+//          DeviceID = ADXL345_GetRegisterValue(0x00);
+//        AccelStatus = AccelReadStatus(0x1D,0x00);
+//        __delay_ms(5);
 //        if(AccelStatus & 0b00001000)
 //        {
 ////        AccelReadData(MMA8491Q_ADDRESS,MMA8491Q_OUTZ_MSB,&TempXMSB,&TempXLSB);

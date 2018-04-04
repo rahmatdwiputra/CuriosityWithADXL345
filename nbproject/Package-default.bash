@@ -10,9 +10,9 @@ CND_CONF=default
 CND_DISTDIR=dist
 TMPDIR=build/${CND_CONF}/${IMAGE_TYPE}/tmp-packaging
 TMPDIRNAME=tmp-packaging
-OUTPUT_PATH=dist/${CND_CONF}/${IMAGE_TYPE}/CuriosityWithADXL345.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
-OUTPUT_BASENAME=CuriosityWithADXL345.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
-PACKAGE_TOP_DIR=curiositywithadxl345/
+OUTPUT_PATH=dist/${CND_CONF}/${IMAGE_TYPE}/CuriositywithADXL345Port.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
+OUTPUT_BASENAME=CuriositywithADXL345Port.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
+PACKAGE_TOP_DIR=curiositywithadxl345port/
 
 # Functions
 function checkReturnCode
@@ -57,15 +57,15 @@ mkdir -p ${TMPDIR}
 
 # Copy files and create directories and links
 cd "${TOP}"
-makeDirectory ${TMPDIR}/curiositywithadxl345/bin
+makeDirectory ${TMPDIR}/curiositywithadxl345port/bin
 copyFileToTmpDir "${OUTPUT_PATH}" "${TMPDIR}/${PACKAGE_TOP_DIR}bin/${OUTPUT_BASENAME}" 0755
 
 
 # Generate tar file
 cd "${TOP}"
-rm -f ${CND_DISTDIR}/${CND_CONF}/package/curiositywithadxl345.tar
+rm -f ${CND_DISTDIR}/${CND_CONF}/package/curiositywithadxl345port.tar
 cd ${TMPDIR}
-tar -vcf ../../../../${CND_DISTDIR}/${CND_CONF}/package/curiositywithadxl345.tar *
+tar -vcf ../../../../${CND_DISTDIR}/${CND_CONF}/package/curiositywithadxl345port.tar *
 checkReturnCode
 
 # Cleanup
