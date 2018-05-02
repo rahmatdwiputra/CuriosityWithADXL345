@@ -40,6 +40,7 @@
 #ifndef _COMMUNICATION_H_
 #define _COMMUNICATION_H_
 
+#define EUSART_DataReady  (EUSART_is_rx_ready())
 /******************************************************************************/
 /* Include Files                                                              */
 /******************************************************************************/
@@ -84,5 +85,16 @@ unsigned char SPI_Read(unsigned char slaveDeviceId,
 unsigned char SPI_Write(unsigned char slaveDeviceId,
                         unsigned char* data,
                         unsigned char bytesNumber);
+
+
+/*!< Initializes the UART communication peripheral. */
+void UART_Init(void);
+
+/*!< Writes one character to UART. */
+void UART_WriteChar(char data);
+
+/*!< Reads one character from UART. */
+void UART_ReadChar(char* data);
+
 
 #endif /* _COMMUNICATION_H_ */

@@ -61,8 +61,8 @@ void PIN_MANAGER_Initialize(void)
     /**
     TRISx registers
     */    
-    TRISA = 0x37;
-    TRISB = 0xF0;
+    TRISA = 0x07;
+    TRISB = 0x70;
     TRISC = 0x9F;
 
     /**
@@ -86,12 +86,22 @@ void PIN_MANAGER_Initialize(void)
     ODCONA = 0x00;
     ODCONB = 0x00;
     ODCONC = 0x00;
-    
+    /**
+    IOCx registers 
+    */
+    //interrupt on change for group IOCAF - flag
+    IOCAFbits.IOCAF2 = 0;
+    //interrupt on change for group IOCAN - negative
+    IOCANbits.IOCAN2 = 0;
+    //interrupt on change for group IOCAP - positive
+    IOCAPbits.IOCAP2 = 1;
 
-
-   
-    
-    
+    // Enable IOCI interrupt 
+    INTCONbits.IOCIE = 1;     
+	
+    RXPPS = 0x0D;   //RB5->EUSART:RX;    
+    RB7PPS = 0x12;   //RB7->EUSART:TX; 
+  
     SSPCLKPPS = 0x0E;   //RB6->MSSP:SCL;
     SSPDATPPS = 0x0C;   //RB4->MSSP:SDA;
     RB6PPS = 0x10;   //RB6->MSSP:SCL;
@@ -101,7 +111,21 @@ void PIN_MANAGER_Initialize(void)
 
 void PIN_MANAGER_IOC(void)
 {   
+	// interrupt on change for pin IOCAF2
+    if(IOCAFbits.IOCAF2 == 1)
+    {
+        IOCAF2_ISR();  
+    }	
+}
 
+/**
+   IOCAF2 Interrupt Service Routine
+*/
+void IOCAF2_ISR(void) {
+
+    // Add custom IOCAF2 code
+    LED_D4_SetHigh(); 
+    IOCAFbits.IOCAF2 = 0;
 }
 
 /**

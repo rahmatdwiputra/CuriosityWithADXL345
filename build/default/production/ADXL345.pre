@@ -62,7 +62,7 @@ unsigned char zOffset);
 
 void ADXL345_SetRangeResolution(unsigned char gRange, unsigned char fullRes);
 
-# 52 "Communication.h"
+# 53 "Communication.h"
 unsigned char I2C_Init(unsigned long clockFreq);
 
 
@@ -98,6 +98,16 @@ unsigned char bytesNumber);
 unsigned char SPI_Write(unsigned char slaveDeviceId,
 unsigned char* data,
 unsigned char bytesNumber);
+
+
+
+void UART_Init(void);
+
+
+void UART_WriteChar(char data);
+
+
+void UART_ReadChar(char* data);
 
 # 52 "ADXL345.c"
 char communicationType = 0;

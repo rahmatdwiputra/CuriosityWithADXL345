@@ -325,3 +325,80 @@ unsigned char SPI_Write(unsigned char slaveDeviceId,
 
     return bytesNumber;
 }
+/***************************************************************************//**
+ * @brief Initializes the UART communication peripheral.
+ *
+ * @param baudRate - Baud rate value.
+ *                   Example: 9600 - 9600 bps.
+ *
+ * @return status  - Result of the initialization procedure.
+ *                   Example: -1 - if initialization was unsuccessful;
+ *                             0 - if initialization was successful.
+*******************************************************************************/
+void UART_Init(void)
+{
+    // Set the EUSART module to the options selected in the user interface.
+
+    // ABDOVF no_overflow; SCKP Non-Inverted; BRG16 16bit_generator; WUE disabled; ABDEN disabled; 
+    BAUD1CON = 0x08;
+
+    // SPEN enabled; RX9 8-bit; CREN enabled; ADDEN disabled; SREN disabled; 
+    RC1STA = 0x90;
+
+    // TX9 8-bit; TX9D 0; SENDB sync_break_complete; TXEN enabled; SYNC asynchronous; BRGH hi_speed; CSRC slave; 
+    TX1STA = 0x24;
+
+    // SP1BRGL 103; 
+    SPBRGL = 0x67;
+
+    // SP1BRGH 0; 
+    SPBRGH = 0x00;
+
+}
+
+/***************************************************************************//**
+ * @brief Writes one character to UART.
+ *
+ * @param data - Character to write.
+ *
+ * @return None.
+*******************************************************************************/
+void UART_WriteChar(char data)
+{
+    while(0 == PIR1bits.TXIF){}
+    TX1REG = data;    // Write the data byte to the USART.
+}
+
+/***************************************************************************//**
+ * @brief Reads one character from UART.
+ *
+ * @param data - Read character.
+ *
+ * @return None.
+*******************************************************************************/
+void UART_ReadChar(char* data)
+{
+    while(!PIR1bits.RCIF){}
+     if(1 == RC1STAbits.OERR)
+    {
+        // EUSART error - restart
+        RC1STAbits.CREN = 0; 
+        RC1STAbits.CREN = 1; 
+    }
+    *data = RC1REG;
+}
+
+/***************************************************************************//**
+ * @brief Writes one string of characters to UART.
+ *
+ * @param string - String of characters to write.
+ *
+ * @return None.
+*******************************************************************************/
+void UART_WriteString(const char* string)
+{
+    while(*string)
+    {
+        UART_WriteChar(*string++);
+    }
+}

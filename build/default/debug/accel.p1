@@ -10790,8 +10790,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic.h: 193: extern __bank0 unsigned char __resetbits;
 [; ;pic.h: 194: extern __bank0 __bit __powerdown;
 [; ;pic.h: 195: extern __bank0 __bit __timeout;
-[; ;pin_manager.h: 149: void PIN_MANAGER_Initialize (void);
-[; ;pin_manager.h: 161: void PIN_MANAGER_IOC(void);
+[; ;pin_manager.h: 209: void PIN_MANAGER_Initialize (void);
+[; ;pin_manager.h: 221: void PIN_MANAGER_IOC(void);
+[; ;pin_manager.h: 223: void IOCAF2_ISR(void);
 [; ;accel.h: 35: char AccelReadStatus(char SlaveAdd, char DataAdd);
 [; ;accel.h: 36: char AccelReadData(char SlaveAdd, char DataAdd, char *DataMSB, char *DataLSB);
 [; ;accel.h: 37: char AccelReadDataAll(char SlaveAdd, char DataAdd, char *DataXMSB, char *DataXLSB,char *DataYMSB, char *DataYLSB,char *DataZMSB, char *DataZLSB);

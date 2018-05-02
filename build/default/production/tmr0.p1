@@ -10830,31 +10830,35 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;tmr0.h: 260: void TMR0_SetInterruptHandler(void (* InterruptHandler)(void));
 [; ;tmr0.h: 278: extern void (*TMR0_InterruptHandler)(void);
 [; ;tmr0.h: 296: void TMR0_DefaultInterruptHandler(void);
-[; ;pin_manager.h: 149: void PIN_MANAGER_Initialize (void);
-[; ;pin_manager.h: 161: void PIN_MANAGER_IOC(void);
-[; ;Communication.h: 52: unsigned char I2C_Init(unsigned long clockFreq);
-[; ;Communication.h: 55: unsigned char I2C_Write(unsigned char slaveAddress,
-[; ;Communication.h: 56: unsigned char* dataBuffer,
-[; ;Communication.h: 57: unsigned char bytesNumber,
-[; ;Communication.h: 58: unsigned char stopBit);
-[; ;Communication.h: 61: unsigned char I2C_Read(unsigned char slaveAddress,
-[; ;Communication.h: 62: unsigned char* dataBuffer,
-[; ;Communication.h: 63: unsigned char bytesNumber,
-[; ;Communication.h: 64: unsigned char stopBit);
-[; ;Communication.h: 67: unsigned char SPI_Init(unsigned char lsbFirst,
-[; ;Communication.h: 68: unsigned long clockFreq,
-[; ;Communication.h: 69: unsigned char clockPol,
-[; ;Communication.h: 70: unsigned char clockEdg);
-[; ;Communication.h: 73: unsigned char SPI_Init(unsigned char lsbFirst,
-[; ;Communication.h: 74: unsigned long clockFreq,
-[; ;Communication.h: 75: unsigned char clockPol,
-[; ;Communication.h: 76: unsigned char clockEdg);
-[; ;Communication.h: 79: unsigned char SPI_Read(unsigned char slaveDeviceId,
-[; ;Communication.h: 80: unsigned char* data,
-[; ;Communication.h: 81: unsigned char bytesNumber);
-[; ;Communication.h: 84: unsigned char SPI_Write(unsigned char slaveDeviceId,
-[; ;Communication.h: 85: unsigned char* data,
-[; ;Communication.h: 86: unsigned char bytesNumber);
+[; ;pin_manager.h: 209: void PIN_MANAGER_Initialize (void);
+[; ;pin_manager.h: 221: void PIN_MANAGER_IOC(void);
+[; ;pin_manager.h: 223: void IOCAF2_ISR(void);
+[; ;Communication.h: 53: unsigned char I2C_Init(unsigned long clockFreq);
+[; ;Communication.h: 56: unsigned char I2C_Write(unsigned char slaveAddress,
+[; ;Communication.h: 57: unsigned char* dataBuffer,
+[; ;Communication.h: 58: unsigned char bytesNumber,
+[; ;Communication.h: 59: unsigned char stopBit);
+[; ;Communication.h: 62: unsigned char I2C_Read(unsigned char slaveAddress,
+[; ;Communication.h: 63: unsigned char* dataBuffer,
+[; ;Communication.h: 64: unsigned char bytesNumber,
+[; ;Communication.h: 65: unsigned char stopBit);
+[; ;Communication.h: 68: unsigned char SPI_Init(unsigned char lsbFirst,
+[; ;Communication.h: 69: unsigned long clockFreq,
+[; ;Communication.h: 70: unsigned char clockPol,
+[; ;Communication.h: 71: unsigned char clockEdg);
+[; ;Communication.h: 74: unsigned char SPI_Init(unsigned char lsbFirst,
+[; ;Communication.h: 75: unsigned long clockFreq,
+[; ;Communication.h: 76: unsigned char clockPol,
+[; ;Communication.h: 77: unsigned char clockEdg);
+[; ;Communication.h: 80: unsigned char SPI_Read(unsigned char slaveDeviceId,
+[; ;Communication.h: 81: unsigned char* data,
+[; ;Communication.h: 82: unsigned char bytesNumber);
+[; ;Communication.h: 85: unsigned char SPI_Write(unsigned char slaveDeviceId,
+[; ;Communication.h: 86: unsigned char* data,
+[; ;Communication.h: 87: unsigned char bytesNumber);
+[; ;Communication.h: 91: void UART_Init(void);
+[; ;Communication.h: 94: void UART_WriteChar(char data);
+[; ;Communication.h: 97: void UART_ReadChar(char* data);
 [; ;ADXL345.h: 183: unsigned char ADXL345_GetRegisterValue(unsigned char registerAddress);
 [; ;ADXL345.h: 186: void ADXL345_SetRegisterValue(unsigned char registerAddress,
 [; ;ADXL345.h: 187: unsigned char registerValue);
@@ -10992,8 +10996,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e :U _TMR0_ISR ]
 [f ]
 "117
-[v F12100 `Vui ~T0 @X0 1 s CountCallBack ]
-[i F12100
+[v F12108 `Vui ~T0 @X0 1 s CountCallBack ]
+[i F12108
 -> -> 0 `i `ui
 ]
 [; ;tmr0.c: 117: static volatile uint16_t CountCallBack = 0;
@@ -11005,7 +11009,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _TMR0 _timer0ReloadVal ]
 [; ;tmr0.c: 125: if (++CountCallBack >= 5)
 "125
-[e $ ! >= =+ F12100 -> -> 1 `i `ui -> -> 5 `i `ui 1216  ]
+[e $ ! >= =+ F12108 -> -> 1 `i `ui -> -> 5 `i `ui 1216  ]
 [; ;tmr0.c: 126: {
 "126
 {
@@ -11014,7 +11018,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ( _TMR0_CallBack ..  ]
 [; ;tmr0.c: 131: CountCallBack = 0;
 "131
-[e = F12100 -> -> 0 `i `ui ]
+[e = F12108 -> -> 0 `i `ui ]
 "132
 }
 [e :U 1216 ]
@@ -11066,8 +11070,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 {
 [; ;tmr0.c: 149: void TMR0_SetInterruptHandler(void (* InterruptHandler)(void)){
 [e :U _TMR0_SetInterruptHandler ]
-[v F12104 `(v ~T0 @X0 0 tf ]
-[v _InterruptHandler `*F12104 ~T0 @X0 1 r1 ]
+[v F12112 `(v ~T0 @X0 0 tf ]
+[v _InterruptHandler `*F12112 ~T0 @X0 1 r1 ]
 [f ]
 [; ;tmr0.c: 150: TMR0_InterruptHandler = InterruptHandler;
 "150

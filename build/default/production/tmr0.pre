@@ -14731,13 +14731,15 @@ extern void (*TMR0_InterruptHandler)(void);
 # 296
 void TMR0_DefaultInterruptHandler(void);
 
-# 149 "pin_manager.h"
+# 209 "pin_manager.h"
 void PIN_MANAGER_Initialize (void);
 
-# 161
+# 221
 void PIN_MANAGER_IOC(void);
 
-# 52 "Communication.h"
+void IOCAF2_ISR(void);
+
+# 53 "Communication.h"
 unsigned char I2C_Init(unsigned long clockFreq);
 
 
@@ -14773,6 +14775,16 @@ unsigned char bytesNumber);
 unsigned char SPI_Write(unsigned char slaveDeviceId,
 unsigned char* data,
 unsigned char bytesNumber);
+
+
+
+void UART_Init(void);
+
+
+void UART_WriteChar(char data);
+
+
+void UART_ReadChar(char* data);
 
 # 183 "ADXL345.h"
 unsigned char ADXL345_GetRegisterValue(unsigned char registerAddress);

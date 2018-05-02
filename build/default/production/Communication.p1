@@ -78,6 +78,28 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S275 . . . ]
 "5601
 [v _SSP1CON1bits `VS275 ~T0 @X0 0 e@533 ]
+"4271
+[v _BAUD1CON `Vuc ~T0 @X0 0 e@415 ]
+"3911
+[v _RC1STA `Vuc ~T0 @X0 0 e@413 ]
+"4091
+[v _TX1STA `Vuc ~T0 @X0 0 e@414 ]
+"3800
+[v _SPBRGL `Vuc ~T0 @X0 0 e@411 ]
+"3862
+[v _SPBRGH `Vuc ~T0 @X0 0 e@412 ]
+"3726
+[v _TX1REG `Vuc ~T0 @X0 0 e@410 ]
+"3926
+[s S212 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S212 . RX9D OERR FERR ADDEN CREN SREN RX9 SPEN ]
+"3925
+[u S211 `S212 1 ]
+[n S211 . . ]
+"3937
+[v _RC1STAbits `VS211 ~T0 @X0 0 e@413 ]
+"3672
+[v _RC1REG `Vuc ~T0 @X0 0 e@409 ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -10838,31 +10860,35 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic.h: 193: extern __bank0 unsigned char __resetbits;
 [; ;pic.h: 194: extern __bank0 __bit __powerdown;
 [; ;pic.h: 195: extern __bank0 __bit __timeout;
-[; ;Communication.h: 52: unsigned char I2C_Init(unsigned long clockFreq);
-[; ;Communication.h: 55: unsigned char I2C_Write(unsigned char slaveAddress,
-[; ;Communication.h: 56: unsigned char* dataBuffer,
-[; ;Communication.h: 57: unsigned char bytesNumber,
-[; ;Communication.h: 58: unsigned char stopBit);
-[; ;Communication.h: 61: unsigned char I2C_Read(unsigned char slaveAddress,
-[; ;Communication.h: 62: unsigned char* dataBuffer,
-[; ;Communication.h: 63: unsigned char bytesNumber,
-[; ;Communication.h: 64: unsigned char stopBit);
-[; ;Communication.h: 67: unsigned char SPI_Init(unsigned char lsbFirst,
-[; ;Communication.h: 68: unsigned long clockFreq,
-[; ;Communication.h: 69: unsigned char clockPol,
-[; ;Communication.h: 70: unsigned char clockEdg);
-[; ;Communication.h: 73: unsigned char SPI_Init(unsigned char lsbFirst,
-[; ;Communication.h: 74: unsigned long clockFreq,
-[; ;Communication.h: 75: unsigned char clockPol,
-[; ;Communication.h: 76: unsigned char clockEdg);
-[; ;Communication.h: 79: unsigned char SPI_Read(unsigned char slaveDeviceId,
-[; ;Communication.h: 80: unsigned char* data,
-[; ;Communication.h: 81: unsigned char bytesNumber);
-[; ;Communication.h: 84: unsigned char SPI_Write(unsigned char slaveDeviceId,
-[; ;Communication.h: 85: unsigned char* data,
-[; ;Communication.h: 86: unsigned char bytesNumber);
-[; ;pin_manager.h: 149: void PIN_MANAGER_Initialize (void);
-[; ;pin_manager.h: 161: void PIN_MANAGER_IOC(void);
+[; ;Communication.h: 53: unsigned char I2C_Init(unsigned long clockFreq);
+[; ;Communication.h: 56: unsigned char I2C_Write(unsigned char slaveAddress,
+[; ;Communication.h: 57: unsigned char* dataBuffer,
+[; ;Communication.h: 58: unsigned char bytesNumber,
+[; ;Communication.h: 59: unsigned char stopBit);
+[; ;Communication.h: 62: unsigned char I2C_Read(unsigned char slaveAddress,
+[; ;Communication.h: 63: unsigned char* dataBuffer,
+[; ;Communication.h: 64: unsigned char bytesNumber,
+[; ;Communication.h: 65: unsigned char stopBit);
+[; ;Communication.h: 68: unsigned char SPI_Init(unsigned char lsbFirst,
+[; ;Communication.h: 69: unsigned long clockFreq,
+[; ;Communication.h: 70: unsigned char clockPol,
+[; ;Communication.h: 71: unsigned char clockEdg);
+[; ;Communication.h: 74: unsigned char SPI_Init(unsigned char lsbFirst,
+[; ;Communication.h: 75: unsigned long clockFreq,
+[; ;Communication.h: 76: unsigned char clockPol,
+[; ;Communication.h: 77: unsigned char clockEdg);
+[; ;Communication.h: 80: unsigned char SPI_Read(unsigned char slaveDeviceId,
+[; ;Communication.h: 81: unsigned char* data,
+[; ;Communication.h: 82: unsigned char bytesNumber);
+[; ;Communication.h: 85: unsigned char SPI_Write(unsigned char slaveDeviceId,
+[; ;Communication.h: 86: unsigned char* data,
+[; ;Communication.h: 87: unsigned char bytesNumber);
+[; ;Communication.h: 91: void UART_Init(void);
+[; ;Communication.h: 94: void UART_WriteChar(char data);
+[; ;Communication.h: 97: void UART_ReadChar(char* data);
+[; ;pin_manager.h: 209: void PIN_MANAGER_Initialize (void);
+[; ;pin_manager.h: 221: void PIN_MANAGER_IOC(void);
+[; ;pin_manager.h: 223: void IOCAF2_ISR(void);
 "57 Communication.c
 [v _I2C_Init `(uc ~T0 @X0 1 ef1`ul ]
 "58
@@ -11328,8 +11354,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _byte `uc ~T0 @X0 1 a ]
 [; ;Communication.c: 265: unsigned char byte = 0;
 [e = _byte -> -> 0 `i `uc ]
-[v F12019 `uc ~T0 @X0 -> 4 `i s ]
-[i F12019
+[v F12027 `uc ~T0 @X0 -> 4 `i s ]
+[i F12027
 :U ..
 "266
 -> -> 0 `i `uc
@@ -11340,7 +11366,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 ]
 [v _writeBuffer `uc ~T0 @X0 -> 4 `i a ]
 [; ;Communication.c: 266: unsigned char writeBuffer[4] = {0, 0, 0, 0};
-[e = _writeBuffer F12019 ]
+[e = _writeBuffer F12027 ]
 [; ;Communication.c: 269: SSP1CON1bits.WCOL = 0;
 "269
 [e = . . _SSP1CON1bits 0 4 -> -> 0 `i `uc ]
@@ -11538,4 +11564,133 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;Communication.c: 327: }
 "327
 [e :UE 1283 ]
+}
+"338
+[v _UART_Init `(v ~T0 @X0 1 ef ]
+"339
+{
+[; ;Communication.c: 338: void UART_Init(void)
+[; ;Communication.c: 339: {
+[e :U _UART_Init ]
+[f ]
+[; ;Communication.c: 343: BAUD1CON = 0x08;
+"343
+[e = _BAUD1CON -> -> 8 `i `uc ]
+[; ;Communication.c: 346: RC1STA = 0x90;
+"346
+[e = _RC1STA -> -> 144 `i `uc ]
+[; ;Communication.c: 349: TX1STA = 0x24;
+"349
+[e = _TX1STA -> -> 36 `i `uc ]
+[; ;Communication.c: 352: SPBRGL = 0x67;
+"352
+[e = _SPBRGL -> -> 103 `i `uc ]
+[; ;Communication.c: 355: SPBRGH = 0x00;
+"355
+[e = _SPBRGH -> -> 0 `i `uc ]
+[; ;Communication.c: 357: }
+"357
+[e :UE 1299 ]
+}
+"366
+[v _UART_WriteChar `(v ~T0 @X0 1 ef1`uc ]
+"367
+{
+[; ;Communication.c: 366: void UART_WriteChar(char data)
+[; ;Communication.c: 367: {
+[e :U _UART_WriteChar ]
+"366
+[v _data `uc ~T0 @X0 1 r1 ]
+"367
+[f ]
+[; ;Communication.c: 368: while(0 == PIR1bits.TXIF){}
+"368
+[e $U 1301  ]
+[e :U 1302 ]
+{
+}
+[e :U 1301 ]
+[e $ == -> 0 `i -> . . _PIR1bits 0 4 `i 1302  ]
+[e :U 1303 ]
+[; ;Communication.c: 369: TX1REG = data;
+"369
+[e = _TX1REG _data ]
+[; ;Communication.c: 370: }
+"370
+[e :UE 1300 ]
+}
+"379
+[v _UART_ReadChar `(v ~T0 @X0 1 ef1`*uc ]
+"380
+{
+[; ;Communication.c: 379: void UART_ReadChar(char* data)
+[; ;Communication.c: 380: {
+[e :U _UART_ReadChar ]
+"379
+[v _data `*uc ~T0 @X0 1 r1 ]
+"380
+[f ]
+[; ;Communication.c: 381: while(!PIR1bits.RCIF){}
+"381
+[e $U 1305  ]
+[e :U 1306 ]
+{
+}
+[e :U 1305 ]
+[e $ ! != -> . . _PIR1bits 0 5 `i -> -> -> 0 `i `Vuc `i 1306  ]
+[e :U 1307 ]
+[; ;Communication.c: 382: if(1 == RC1STAbits.OERR)
+"382
+[e $ ! == -> 1 `i -> . . _RC1STAbits 0 1 `i 1308  ]
+[; ;Communication.c: 383: {
+"383
+{
+[; ;Communication.c: 385: RC1STAbits.CREN = 0;
+"385
+[e = . . _RC1STAbits 0 4 -> -> 0 `i `uc ]
+[; ;Communication.c: 386: RC1STAbits.CREN = 1;
+"386
+[e = . . _RC1STAbits 0 4 -> -> 1 `i `uc ]
+"387
+}
+[e :U 1308 ]
+[; ;Communication.c: 387: }
+[; ;Communication.c: 388: *data = RC1REG;
+"388
+[e = *U _data _RC1REG ]
+[; ;Communication.c: 389: }
+"389
+[e :UE 1304 ]
+}
+"398
+[v _UART_WriteString `(v ~T0 @X0 1 ef1`*Cuc ]
+"399
+{
+[; ;Communication.c: 398: void UART_WriteString(const char* string)
+[; ;Communication.c: 399: {
+[e :U _UART_WriteString ]
+"398
+[v _string `*Cuc ~T0 @X0 1 r1 ]
+"399
+[f ]
+[; ;Communication.c: 400: while(*string)
+"400
+[e $U 1310  ]
+[e :U 1311 ]
+[; ;Communication.c: 401: {
+"401
+{
+[; ;Communication.c: 402: UART_WriteChar(*string++);
+"402
+[e ( _UART_WriteChar (1 *U ++ _string * -> -> 1 `i `x -> -> # *U _string `i `x ]
+"403
+}
+[e :U 1310 ]
+"400
+[e $ != -> *U _string `i -> -> -> 0 `i `Cuc `i 1311  ]
+[e :U 1312 ]
+[; ;Communication.c: 403: }
+[; ;Communication.c: 404: }
+"404
+[e :UE 1309 ]
 }

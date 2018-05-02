@@ -14710,11 +14710,13 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 
-# 149 "pin_manager.h"
+# 209 "pin_manager.h"
 void PIN_MANAGER_Initialize (void);
 
-# 161
+# 221
 void PIN_MANAGER_IOC(void);
+
+void IOCAF2_ISR(void);
 
 # 35 "accel.h"
 char AccelReadStatus(char SlaveAdd, char DataAdd);

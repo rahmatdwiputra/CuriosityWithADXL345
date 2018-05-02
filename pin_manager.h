@@ -59,6 +59,43 @@
 #define PULL_UP_ENABLED      1
 #define PULL_UP_DISABLED     0
 
+// get/set INT aliases
+#define INT_TRIS                 TRISAbits.TRISA2
+#define INT_LAT                  LATAbits.LATA2
+#define INT_PORT                 PORTAbits.RA2
+#define INT_WPU                  WPUAbits.WPUA2
+#define INT_OD                   ODCONAbits.ODA2
+#define INT_ANS                  ANSELAbits.ANSA2
+#define INT_SetHigh()            do { LATAbits.LATA2 = 1; } while(0)
+#define INT_SetLow()             do { LATAbits.LATA2 = 0; } while(0)
+#define INT_Toggle()             do { LATAbits.LATA2 = ~LATAbits.LATA2; } while(0)
+#define INT_GetValue()           PORTAbits.RA2
+#define INT_SetDigitalInput()    do { TRISAbits.TRISA2 = 1; } while(0)
+#define INT_SetDigitalOutput()   do { TRISAbits.TRISA2 = 0; } while(0)
+#define INT_SetPullup()          do { WPUAbits.WPUA2 = 1; } while(0)
+#define INT_ResetPullup()        do { WPUAbits.WPUA2 = 0; } while(0)
+#define INT_SetPushPull()        do { ODCONAbits.ODA2 = 0; } while(0)
+#define INT_SetOpenDrain()       do { ODCONAbits.ODA2 = 1; } while(0)
+#define INT_SetAnalogMode()      do { ANSELAbits.ANSA2 = 1; } while(0)
+#define INT_SetDigitalMode()     do { ANSELAbits.ANSA2 = 0; } while(0)
+
+// get/set LED_D4 aliases
+#define LED_D4_TRIS                 TRISAbits.TRISA5
+#define LED_D4_LAT                  LATAbits.LATA5
+#define LED_D4_PORT                 PORTAbits.RA5
+#define LED_D4_WPU                  WPUAbits.WPUA5
+#define LED_D4_OD                   ODCONAbits.ODA5
+#define LED_D4_SetHigh()            do { LATAbits.LATA5 = 1; } while(0)
+#define LED_D4_SetLow()             do { LATAbits.LATA5 = 0; } while(0)
+#define LED_D4_Toggle()             do { LATAbits.LATA5 = ~LATAbits.LATA5; } while(0)
+#define LED_D4_GetValue()           PORTAbits.RA5
+#define LED_D4_SetDigitalInput()    do { TRISAbits.TRISA5 = 1; } while(0)
+#define LED_D4_SetDigitalOutput()   do { TRISAbits.TRISA5 = 0; } while(0)
+#define LED_D4_SetPullup()          do { WPUAbits.WPUA5 = 1; } while(0)
+#define LED_D4_ResetPullup()        do { WPUAbits.WPUA5 = 0; } while(0)
+#define LED_D4_SetPushPull()        do { ODCONAbits.ODA5 = 0; } while(0)
+#define LED_D4_SetOpenDrain()       do { ODCONAbits.ODA5 = 1; } while(0)
+
 // get/set SDA aliases
 #define SDA_TRIS               TRISBbits.TRISB4
 #define SDA_LAT                LATBbits.LATB4
@@ -136,6 +173,29 @@
 #define CS_SetAnalogMode()  do { ANSELCbits.ANSC6 = 1; } while(0)
 #define CS_SetDigitalMode() do { ANSELCbits.ANSC6 = 0; } while(0)
 
+// get/set RX procedures
+#define RX_SetHigh()               do { LATBbits.LATB5 = 1; } while(0)
+#define RX_SetLow()                do { LATBbits.LATB5 = 0; } while(0)
+#define RX_Toggle()                do { LATBbits.LATB5 = ~LATBbits.LATB5; } while(0)
+#define RX_GetValue()              PORTBbits.RB5
+#define RX_SetDigitalInput()       do { TRISBbits.TRISB5 = 1; } while(0)
+#define RX_SetDigitalOutput()      do { TRISBbits.TRISB5 = 0; } while(0)
+#define RX_SetPullup()             do { WPUBbits.WPUB5 = 1; } while(0)
+#define RX_ResetPullup()           do { WPUBbits.WPUB5 = 0; } while(0)
+#define RX_SetAnalogMode()         do { ANSELBbits.ANSB5 = 1; } while(0)
+#define RX_SetDigitalMode()        do { ANSELBbits.ANSB5 = 0; } while(0)
+
+// get/set TX procedures
+#define TX_SetHigh()               do { LATBbits.LATB7 = 1; } while(0)
+#define TX_SetLow()                do { LATBbits.LATB7 = 0; } while(0)
+#define TX_Toggle()                do { LATBbits.LATB7 = ~LATBbits.LATB7; } while(0)
+#define TX_GetValue()              PORTBbits.RB7
+#define TX_SetDigitalInput()       do { TRISBbits.TRISB7 = 1; } while(0)
+#define TX_SetDigitalOutput()      do { TRISBbits.TRISB7 = 0; } while(0)
+#define TX_SetPullup()             do { WPUBbits.WPUB7 = 1; } while(0)
+#define TX_ResetPullup()           do { WPUBbits.WPUB7 = 0; } while(0)
+#define TX_SetAnalogMode()         do { ANSELBbits.ANSB7 = 1; } while(0)
+#define TX_SetDigitalMode()        do { ANSELBbits.ANSB7 = 0; } while(0)
 /**
    @Param
     none
@@ -160,6 +220,7 @@ void PIN_MANAGER_Initialize (void);
  */
 void PIN_MANAGER_IOC(void);
 
+void IOCAF2_ISR(void);
 
 
 #endif // PIN_MANAGER_H

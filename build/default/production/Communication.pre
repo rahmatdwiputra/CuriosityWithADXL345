@@ -14611,7 +14611,7 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 
-# 52 "Communication.h"
+# 53 "Communication.h"
 unsigned char I2C_Init(unsigned long clockFreq);
 
 
@@ -14648,11 +14648,23 @@ unsigned char SPI_Write(unsigned char slaveDeviceId,
 unsigned char* data,
 unsigned char bytesNumber);
 
-# 149 "pin_manager.h"
+
+
+void UART_Init(void);
+
+
+void UART_WriteChar(char data);
+
+
+void UART_ReadChar(char* data);
+
+# 209 "pin_manager.h"
 void PIN_MANAGER_Initialize (void);
 
-# 161
+# 221
 void PIN_MANAGER_IOC(void);
+
+void IOCAF2_ISR(void);
 
 # 57 "Communication.c"
 unsigned char I2C_Init(unsigned long clockFreq)
@@ -14864,4 +14876,55 @@ do { LATCbits.LATC6 = 1; } while(0);
 }
 
 return bytesNumber;
+}
+
+# 338
+void UART_Init(void)
+{
+
+
+
+BAUD1CON = 0x08;
+
+
+RC1STA = 0x90;
+
+
+TX1STA = 0x24;
+
+
+SPBRGL = 0x67;
+
+
+SPBRGH = 0x00;
+
+}
+
+# 366
+void UART_WriteChar(char data)
+{
+while(0 == PIR1bits.TXIF){}
+TX1REG = data;
+}
+
+# 379
+void UART_ReadChar(char* data)
+{
+while(!PIR1bits.RCIF){}
+if(1 == RC1STAbits.OERR)
+{
+
+RC1STAbits.CREN = 0;
+RC1STAbits.CREN = 1;
+}
+*data = RC1REG;
+}
+
+# 398
+void UART_WriteString(const char* string)
+{
+while(*string)
+{
+UART_WriteChar(*string++);
+}
 }

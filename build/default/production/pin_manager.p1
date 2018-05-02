@@ -40,6 +40,54 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _ODCONB `Vuc ~T0 @X0 0 e@653 ]
 "6166
 [v _ODCONC `Vuc ~T0 @X0 0 e@654 ]
+"7219
+[s S353 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S353 . IOCAF0 IOCAF1 IOCAF2 IOCAF3 IOCAF4 IOCAF5 ]
+"7227
+[s S354 :6 `uc 1 ]
+[n S354 . IOCAF ]
+"7218
+[u S352 `S353 1 `S354 1 ]
+[n S352 . . . ]
+"7231
+[v _IOCAFbits `VS352 ~T0 @X0 0 e@915 ]
+"7161
+[s S350 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S350 . IOCAN0 IOCAN1 IOCAN2 IOCAN3 IOCAN4 IOCAN5 ]
+"7169
+[s S351 :6 `uc 1 ]
+[n S351 . IOCAN ]
+"7160
+[u S349 `S350 1 `S351 1 ]
+[n S349 . . . ]
+"7173
+[v _IOCANbits `VS349 ~T0 @X0 0 e@914 ]
+"7103
+[s S347 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S347 . IOCAP0 IOCAP1 IOCAP2 IOCAP3 IOCAP4 IOCAP5 ]
+"7111
+[s S348 :6 `uc 1 ]
+[n S348 . IOCAP ]
+"7102
+[u S346 `S347 1 `S348 1 ]
+[n S346 . . . ]
+"7115
+[v _IOCAPbits `VS346 ~T0 @X0 0 e@913 ]
+"355
+[s S26 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S26 . IOCIF INTF TMR0IF IOCIE INTE TMR0IE PEIE GIE ]
+"365
+[s S27 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S27 . . T0IF . T0IE ]
+"354
+[u S25 `S26 1 `S27 1 ]
+[n S25 . . . ]
+"372
+[v _INTCONbits `VS25 ~T0 @X0 0 e@11 ]
+"22137
+[v _RXPPS `Vuc ~T0 @X0 0 e@3620 ]
+"22973
+[v _RB7PPS `Vuc ~T0 @X0 0 e@3743 ]
 "21961
 [v _SSPCLKPPS `Vuc ~T0 @X0 0 e@3616 ]
 "22005
@@ -48,6 +96,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _RB6PPS `Vuc ~T0 @X0 0 e@3742 ]
 "22841
 [v _RB4PPS `Vuc ~T0 @X0 0 e@3740 ]
+"223 pin_manager.h
+[v _IOCAF2_ISR `(v ~T0 @X0 0 ef ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -10808,8 +10858,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic.h: 193: extern __bank0 unsigned char __resetbits;
 [; ;pic.h: 194: extern __bank0 __bit __powerdown;
 [; ;pic.h: 195: extern __bank0 __bit __timeout;
-[; ;pin_manager.h: 149: void PIN_MANAGER_Initialize (void);
-[; ;pin_manager.h: 161: void PIN_MANAGER_IOC(void);
+[; ;pin_manager.h: 209: void PIN_MANAGER_Initialize (void);
+[; ;pin_manager.h: 221: void PIN_MANAGER_IOC(void);
+[; ;pin_manager.h: 223: void IOCAF2_ISR(void);
 [; ;stdbool.h: 12: typedef unsigned char bool;
 "52 pin_manager.c
 [v _PIN_MANAGER_Initialize `(v ~T0 @X0 1 ef ]
@@ -10828,12 +10879,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pin_manager.c: 59: LATC = 0x00;
 "59
 [e = _LATC -> -> 0 `i `uc ]
-[; ;pin_manager.c: 64: TRISA = 0x37;
+[; ;pin_manager.c: 64: TRISA = 0x07;
 "64
-[e = _TRISA -> -> 55 `i `uc ]
-[; ;pin_manager.c: 65: TRISB = 0xF0;
+[e = _TRISA -> -> 7 `i `uc ]
+[; ;pin_manager.c: 65: TRISB = 0x70;
 "65
-[e = _TRISB -> -> 240 `i `uc ]
+[e = _TRISB -> -> 112 `i `uc ]
 [; ;pin_manager.c: 66: TRISC = 0x9F;
 "66
 [e = _TRISC -> -> 159 `i `uc ]
@@ -10867,31 +10918,75 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pin_manager.c: 88: ODCONC = 0x00;
 "88
 [e = _ODCONC -> -> 0 `i `uc ]
-[; ;pin_manager.c: 95: SSPCLKPPS = 0x0E;
+[; ;pin_manager.c: 93: IOCAFbits.IOCAF2 = 0;
+"93
+[e = . . _IOCAFbits 0 2 -> -> 0 `i `uc ]
+[; ;pin_manager.c: 95: IOCANbits.IOCAN2 = 0;
 "95
-[e = _SSPCLKPPS -> -> 14 `i `uc ]
-[; ;pin_manager.c: 96: SSPDATPPS = 0x0C;
-"96
-[e = _SSPDATPPS -> -> 12 `i `uc ]
-[; ;pin_manager.c: 97: RB6PPS = 0x10;
+[e = . . _IOCANbits 0 2 -> -> 0 `i `uc ]
+[; ;pin_manager.c: 97: IOCAPbits.IOCAP2 = 1;
 "97
-[e = _RB6PPS -> -> 16 `i `uc ]
-[; ;pin_manager.c: 98: RB4PPS = 0x11;
-"98
-[e = _RB4PPS -> -> 17 `i `uc ]
-[; ;pin_manager.c: 100: }
+[e = . . _IOCAPbits 0 2 -> -> 1 `i `uc ]
+[; ;pin_manager.c: 100: INTCONbits.IOCIE = 1;
 "100
+[e = . . _INTCONbits 0 3 -> -> 1 `i `uc ]
+[; ;pin_manager.c: 102: RXPPS = 0x0D;
+"102
+[e = _RXPPS -> -> 13 `i `uc ]
+[; ;pin_manager.c: 103: RB7PPS = 0x12;
+"103
+[e = _RB7PPS -> -> 18 `i `uc ]
+[; ;pin_manager.c: 105: SSPCLKPPS = 0x0E;
+"105
+[e = _SSPCLKPPS -> -> 14 `i `uc ]
+[; ;pin_manager.c: 106: SSPDATPPS = 0x0C;
+"106
+[e = _SSPDATPPS -> -> 12 `i `uc ]
+[; ;pin_manager.c: 107: RB6PPS = 0x10;
+"107
+[e = _RB6PPS -> -> 16 `i `uc ]
+[; ;pin_manager.c: 108: RB4PPS = 0x11;
+"108
+[e = _RB4PPS -> -> 17 `i `uc ]
+[; ;pin_manager.c: 110: }
+"110
 [e :UE 1211 ]
 }
-"102
+"112
 [v _PIN_MANAGER_IOC `(v ~T0 @X0 1 ef ]
-"103
+"113
 {
-[; ;pin_manager.c: 102: void PIN_MANAGER_IOC(void)
-[; ;pin_manager.c: 103: {
+[; ;pin_manager.c: 112: void PIN_MANAGER_IOC(void)
+[; ;pin_manager.c: 113: {
 [e :U _PIN_MANAGER_IOC ]
 [f ]
-[; ;pin_manager.c: 105: }
-"105
+[; ;pin_manager.c: 115: if(IOCAFbits.IOCAF2 == 1)
+"115
+[e $ ! == -> . . _IOCAFbits 0 2 `i -> 1 `i 1213  ]
+[; ;pin_manager.c: 116: {
+"116
+{
+[; ;pin_manager.c: 117: IOCAF2_ISR();
+"117
+[e ( _IOCAF2_ISR ..  ]
+"118
+}
+[e :U 1213 ]
+[; ;pin_manager.c: 118: }
+[; ;pin_manager.c: 119: }
+"119
 [e :UE 1212 ]
+}
+"124
+[v _IOCAF2_ISR `(v ~T0 @X0 1 ef ]
+{
+[; ;pin_manager.c: 124: void IOCAF2_ISR(void) {
+[e :U _IOCAF2_ISR ]
+[f ]
+[; ;pin_manager.c: 128: IOCAFbits.IOCAF2 = 0;
+"128
+[e = . . _IOCAFbits 0 2 -> -> 0 `i `uc ]
+[; ;pin_manager.c: 129: }
+"129
+[e :UE 1214 ]
 }

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project>
-  <executable name="dist/default/production\CuriositywithADXL345Port.production.hex">
+  <executable name="dist/default/production\CuriosityWithADXL345.production.hex">
     <memory name="program">
       <units>words</units>
       <length>8192</length>
-      <used>922</used>
-      <free>7270</free>
+      <used>949</used>
+      <free>7243</free>
     </memory>
     <memory name="data">
       <units>bytes</units>

@@ -1,15 +1,15 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"79 Communication.h
+"80 Communication.h
 [v _SPI_Read `(uc ~T0 @X0 0 ef3`uc`*uc`uc ]
-"55
+"56
 [v _I2C_Write `(uc ~T0 @X0 0 ef4`uc`*uc`uc`uc ]
-"61
+"62
 [v _I2C_Read `(uc ~T0 @X0 0 ef4`uc`*uc`uc`uc ]
-"84
+"85
 [v _SPI_Write `(uc ~T0 @X0 0 ef3`uc`*uc`uc ]
-"67
+"68
 [v _SPI_Init `(uc ~T0 @X0 0 ef4`uc`ul`uc`uc ]
-"52
+"53
 [v _I2C_Init `(uc ~T0 @X0 0 ef1`ul ]
 [; ;ADXL345.h: 183: unsigned char ADXL345_GetRegisterValue(unsigned char registerAddress);
 [; ;ADXL345.h: 186: void ADXL345_SetRegisterValue(unsigned char registerAddress,
@@ -48,29 +48,32 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;ADXL345.h: 237: unsigned char yOffset,
 [; ;ADXL345.h: 238: unsigned char zOffset);
 [; ;ADXL345.h: 241: void ADXL345_SetRangeResolution(unsigned char gRange, unsigned char fullRes);
-[; ;Communication.h: 52: unsigned char I2C_Init(unsigned long clockFreq);
-[; ;Communication.h: 55: unsigned char I2C_Write(unsigned char slaveAddress,
-[; ;Communication.h: 56: unsigned char* dataBuffer,
-[; ;Communication.h: 57: unsigned char bytesNumber,
-[; ;Communication.h: 58: unsigned char stopBit);
-[; ;Communication.h: 61: unsigned char I2C_Read(unsigned char slaveAddress,
-[; ;Communication.h: 62: unsigned char* dataBuffer,
-[; ;Communication.h: 63: unsigned char bytesNumber,
-[; ;Communication.h: 64: unsigned char stopBit);
-[; ;Communication.h: 67: unsigned char SPI_Init(unsigned char lsbFirst,
-[; ;Communication.h: 68: unsigned long clockFreq,
-[; ;Communication.h: 69: unsigned char clockPol,
-[; ;Communication.h: 70: unsigned char clockEdg);
-[; ;Communication.h: 73: unsigned char SPI_Init(unsigned char lsbFirst,
-[; ;Communication.h: 74: unsigned long clockFreq,
-[; ;Communication.h: 75: unsigned char clockPol,
-[; ;Communication.h: 76: unsigned char clockEdg);
-[; ;Communication.h: 79: unsigned char SPI_Read(unsigned char slaveDeviceId,
-[; ;Communication.h: 80: unsigned char* data,
-[; ;Communication.h: 81: unsigned char bytesNumber);
-[; ;Communication.h: 84: unsigned char SPI_Write(unsigned char slaveDeviceId,
-[; ;Communication.h: 85: unsigned char* data,
-[; ;Communication.h: 86: unsigned char bytesNumber);
+[; ;Communication.h: 53: unsigned char I2C_Init(unsigned long clockFreq);
+[; ;Communication.h: 56: unsigned char I2C_Write(unsigned char slaveAddress,
+[; ;Communication.h: 57: unsigned char* dataBuffer,
+[; ;Communication.h: 58: unsigned char bytesNumber,
+[; ;Communication.h: 59: unsigned char stopBit);
+[; ;Communication.h: 62: unsigned char I2C_Read(unsigned char slaveAddress,
+[; ;Communication.h: 63: unsigned char* dataBuffer,
+[; ;Communication.h: 64: unsigned char bytesNumber,
+[; ;Communication.h: 65: unsigned char stopBit);
+[; ;Communication.h: 68: unsigned char SPI_Init(unsigned char lsbFirst,
+[; ;Communication.h: 69: unsigned long clockFreq,
+[; ;Communication.h: 70: unsigned char clockPol,
+[; ;Communication.h: 71: unsigned char clockEdg);
+[; ;Communication.h: 74: unsigned char SPI_Init(unsigned char lsbFirst,
+[; ;Communication.h: 75: unsigned long clockFreq,
+[; ;Communication.h: 76: unsigned char clockPol,
+[; ;Communication.h: 77: unsigned char clockEdg);
+[; ;Communication.h: 80: unsigned char SPI_Read(unsigned char slaveDeviceId,
+[; ;Communication.h: 81: unsigned char* data,
+[; ;Communication.h: 82: unsigned char bytesNumber);
+[; ;Communication.h: 85: unsigned char SPI_Write(unsigned char slaveDeviceId,
+[; ;Communication.h: 86: unsigned char* data,
+[; ;Communication.h: 87: unsigned char bytesNumber);
+[; ;Communication.h: 91: void UART_Init(void);
+[; ;Communication.h: 94: void UART_WriteChar(char data);
+[; ;Communication.h: 97: void UART_ReadChar(char* data);
 "52 ADXL345.c
 [v _communicationType `uc ~T0 @X0 1 e ]
 [i _communicationType
@@ -100,8 +103,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _registerAddress `uc ~T0 @X0 1 r1 ]
 "68
 [f ]
-[v F85 `uc ~T0 @X0 -> 2 `i s ]
-[i F85
+[v F91 `uc ~T0 @X0 -> 2 `i s ]
+[i F91
 :U ..
 "69
 -> -> 0 `i `uc
@@ -110,7 +113,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 ]
 [v _dataBuffer `uc ~T0 @X0 -> 2 `i a ]
 [; ;ADXL345.c: 69: unsigned char dataBuffer[2] = {0, 0};
-[e = _dataBuffer F85 ]
+[e = _dataBuffer F91 ]
 "70
 [v _registerValue `uc ~T0 @X0 1 a ]
 [; ;ADXL345.c: 70: unsigned char registerValue = 0;
@@ -181,8 +184,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _registerValue `uc ~T0 @X0 1 r2 ]
 "104
 [f ]
-[v F90 `uc ~T0 @X0 -> 2 `i s ]
-[i F90
+[v F96 `uc ~T0 @X0 -> 2 `i s ]
+[i F96
 :U ..
 "105
 -> -> 0 `i `uc
@@ -191,7 +194,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 ]
 [v _dataBuffer `uc ~T0 @X0 -> 2 `i a ]
 [; ;ADXL345.c: 105: unsigned char dataBuffer[2] = {0, 0};
-[e = _dataBuffer F90 ]
+[e = _dataBuffer F96 ]
 [; ;ADXL345.c: 107: if(communicationType == 0)
 "107
 [e $ ! == -> _communicationType `i -> 0 `i 5  ]
@@ -364,8 +367,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _firstRegAddress `uc ~T0 @X0 1 a ]
 [; ;ADXL345.c: 194: unsigned char firstRegAddress = 0x32;
 [e = _firstRegAddress -> -> 50 `i `uc ]
-[v F101 `uc ~T0 @X0 -> 7 `i s ]
-[i F101
+[v F107 `uc ~T0 @X0 -> 7 `i s ]
+[i F107
 :U ..
 "195
 -> -> 0 `i `uc
@@ -379,7 +382,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 ]
 [v _readBuffer `uc ~T0 @X0 -> 7 `i a ]
 [; ;ADXL345.c: 195: unsigned char readBuffer[7] = {0, 0, 0, 0, 0, 0, 0};
-[e = _readBuffer F101 ]
+[e = _readBuffer F107 ]
 [; ;ADXL345.c: 197: if(communicationType == 0)
 "197
 [e $ ! == -> _communicationType `i -> 0 `i 13  ]
